@@ -184,7 +184,7 @@
 <p>PWM Pins of the Microcontroller are connected to the L293D Motor Driver IC.</p>
 <p>PWM Pin				Microcontroller Pin </p>
 <ul>
-<li>Left Motor		--&gt;	PD5</li>
+<li>Left Motor	  --&gt;	PD5</li>
 <li>Right Motor	  --&gt;	PD6</li>
 </ul>
 </li>
@@ -222,7 +222,7 @@
 <p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. You can verify the output by referring to <em>Expected Output - CoppeliaSim</em> video.</p>
 <p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
 <p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>src</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
-<pre><code class="language-bash">avr_hex_file_generator -cpp lab2_motor_pwm_main -dcpp eBot_Sandbox -dc eBot_MCU_Predef -m atmega328p
+<pre><code class="language-bash">avr_hex_file_generator -cpp src/lab2_motor_pwm_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
 </code></pre>
 <p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab2_motor_pwm_main.hex</strong> file along with other build files.</p>
 <pre><code class="language-pseudocode">**======== Rebuild All: 1 succeeded, 0 failed, 0 skipped ========**
@@ -248,14 +248,14 @@
    #define		motors_pwm_L_pin		PD5		// 5
    
    // Timer / Counter registers
-   #define		TCNT5H_reg				TCNT0H	// Timer / Counter 0 High Byte register
-   #define		TCNT5L_reg				TCNT0L	// Timer / Counter 0 Low Byte register
-   #define		OCR5AL_reg				OCR0AL	// Output Compare Register 0A Low Byte
-   #define		OCR5AH_reg				OCR0AH	// Output Compare Register 0A High Byte
-   #define		OCR5BL_reg				OCR0BL	// Output Compare Register 0B Low Byte
-   #define		OCR5BH_reg				OCR0BH	// Output Compare Register 0B High Byte
-   #define		TCCR5A_reg				TCCR0A	// Timer / Counter Control Register 0A
-   #define		TCCR5B_reg				TCCR0B	// Timer / Counter Control Register 0B
+   #define		TCNTH_reg				TCNT0H	// Timer / Counter 0 High Byte register
+   #define		TCNTL_reg				TCNT0L	// Timer / Counter 0 Low Byte register
+   #define		OCRAL_reg				OCR0AL	// Output Compare Register 0A Low Byte
+   #define		OCRAH_reg				OCR0AH	// Output Compare Register 0A High Byte
+   #define		OCRBL_reg				OCR0BL	// Output Compare Register 0B Low Byte
+   #define		OCRBH_reg				OCR0BH	// Output Compare Register 0B High Byte
+   #define		TCCRA_reg				TCCR0A	// Timer / Counter Control Register 0A
+   #define		TCCRB_reg				TCCR0B	// Timer / Counter Control Register 0B
    
    // Bits of compare output mode in the TCCRnA register ( Timer / Counter 'n' Control Register A, where n = 0, 1, 2, 3, 4, 5 )
    #define		COMA1_bit			COM0A1	// 7 (Compare Output Mode bit 1 for Channel A)
