@@ -277,25 +277,29 @@
 <h3><a class="header" href="#div-alignjustify-classmainbavr-building-toolbdiv" id="div-alignjustify-classmainbavr-building-toolbdiv"><div align="justify" class="main"><b>AVR Building Tool:</b></div></a></h3>
 <hr>
 <b>Description:</b><div align="justify" class="main">  This is user generated executable file. The file will be used to compile and build AVR codes and generate hex file. </div>
-<b>avr_hex_file_generator</b>  executable file is provided in a zip. Extract it and set a $PATH of executable file in environment variable. <br/>
+Download  <b><a href="./resources/avr_hex_file_generator" target="_blank">avr_hex_file_generator</a></b> executable file. Right-click on the hyperlinks and select **Save Link As...** option to download.<br>
+Set a $PATH of executable file in environment variable. <br/>
 <br/>
 <b>Follow the steps to set environment variable:</b>
 <ul>
-<li>
-<p>Open Terminal and navigate to home directory:</p>
-<pre><code class="language-bash">cd $HOME
+<li>Open Terminal and navigate to home directory:</li>
+</ul>
+<pre><code class="language-bash"> cd $HOME
 </code></pre>
-</li>
-<li>
-<p>Open the .bashrc file in any editor:</p>
-</li>
+<ul>
+<li>Run the following command:</li>
+</ul>
+<pre><code class="language-bash">  sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude
+</code></pre>
+<ul>
+<li>Open the .bashrc file in any editor:</li>
 </ul>
 <pre><code class="language-bash"> sudo nano .bashrc
 </code></pre>
 <ul>
 <li>Add the following line to the file at the end.</li>
 </ul>
-<pre><code class="language-bash"> export PATH = &quot;$HOME/Downloads/CS684_Installation:$PATH&quot;
+<pre><code class="language-bash"> export PATH=&quot;$HOME/&lt;Path_to_executable_file&gt;:$PATH&quot;
 </code></pre>
 <ul>
 <li>Save the file and exit. Use the source command to force Linux to reload the .bashrc file which normally is read only when you log in each time.</li>
