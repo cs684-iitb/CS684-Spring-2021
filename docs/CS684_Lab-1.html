@@ -171,27 +171,21 @@
 <h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
 <ul>
 <li>
-<p>Interrupt Switch :  <b>PD2</b></p>
+<p>Interrupt Switch :  <strong>PD2</strong></p>
 </li>
 <li>
 <p>Bar-graph LED:</p>
 <ul>
-<li>
-<p>LED 2   --&gt;   <b>PB1</b></p>
-</li>
-<li>
-<p>LED 6   --&gt;   <b>PB5</b></p>
-</li>
-<li>
-<p>LED 8   --&gt;   <b>PB0</b></p>
-</li>
+<li>LED 2   --&gt;   <strong>PB1</strong></li>
+<li>LED 6   --&gt;   <strong>PB5</strong></li>
+<li>LED 8   --&gt;   <strong>PB0</strong></li>
 </ul>
 </li>
 </ul>
 <hr />
 <h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
-<p><strong>Step-1:</strong>  Open the project <strong>lab1_sw_led</strong> from <strong>Lab_1</strong> folder. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab1_sw_led</strong> folder to open the project.</p>
-<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>Lab1_SW_LED</strong> function to achieve the following:</p>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab1_sw_led" target="_blank">lab1_sw_led</a></b> folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab1_sw_led</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>toggle_leds_on_sw_press</strong> function to achieve the following:</p>
 <ol>
 <li>Check whether the Interrupt Switch is pressed or not.</li>
 <li>If the Interrupt Switch is pressed, only the <strong>2nd</strong> LED will turn OFF and the <strong>8th</strong> LED will turn ON.</li>
@@ -210,7 +204,7 @@
 <pre><code class="language-bash">avr_hex_file_generator -cpp src/lab1_sw_led_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
 </code></pre>
 <p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab1_sw_led_main.hex</strong> file along with other build files.</p>
-<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-1_output.png"/></center>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-1_output.png"></center>
 <p><strong>Step-4:</strong> Load the hex file on the SimulIDE circuit once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
@@ -236,10 +230,8 @@
 </ul>
 <hr />
 <h4><a class="header" href="#simulation-expected-output" id="simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
-<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation Guide provided to you)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iA9HXVOefkY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="z-index:5;position:relative;"></iframe>
-<hr />
-<h4><a class="header" href="#submission-instructions" id="submission-instructions">SUBMISSION INSTRUCTIONS</a></h4>
+<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
+<iframe width="560" height="315" src="https://youtu.be/JnWsCg0AsYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="z-index:5;position:relative;"></iframe>
 
                     </main>
 
