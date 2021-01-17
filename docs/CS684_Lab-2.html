@@ -236,12 +236,12 @@
 <p><strong>Note:</strong> For better angle, you can change the perspective of the scene using page selector. <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/CoppeliaSim_page_selector.png"></center></p>
 </blockquote>
 <p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
-<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>lab2_motor_pwm</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
+<p><strong>Step-6:</strong> In the Package Explorer (left pane), right click on <strong>lab2_motor_pwm</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
 <pre><code class="language-bash">avr_hex_file_generator -cpp src/lab2_motor_pwm_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
 </code></pre>
 <p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab2_motor_pwm_main.hex</strong> file along with other build files.</p>
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclpse_lab-2_output.png"></center>
-<p><strong>Step-4:</strong> Load the hex file on the SimulIDE circuit once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
+<p><strong>Step-7:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
 <ul>

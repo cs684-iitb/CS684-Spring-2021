@@ -215,23 +215,20 @@ Enter 'Y' / 'y' to take the next sensor reading or 'Q' / 'q' to quit: y
 <p>To change the orientation of the robot, click on <em>object/item rotate</em> and enter alpha, beta and gamma values in orientation tab. (Refer EXPECTED OUTPUT - CoppeliaSim video)</p>
 </blockquote>
 <ul>
-<li>
-<p>Verify the readings for following position and orientation:</p>
-<p>| Position (X,Y) - Orientation (Alpha, Beta, Gamma)   | Sensor Reading |
-| :----------------: | :----------------: |
-|   (0.2020, 0.2000) - (0, 0, 90)    | 127 |
-|   (0.2020, -0.2000) - (0, 0, -90)    | 127 |
-|     (0.6060, -0.2000) - (0, 0, 0)     | 70 |
-|     (-0.6060, -0.2000) - (0, 0, 90)     | 73 |</p>
-</li>
+<li>Verify the readings for following position and orientation:</li>
 </ul>
+<pre><code class="language-c">pos(X,Y) - (0.2020, 0.2000),   ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; reading(127)
+pos(X,Y) - (0.2020, -0.2000),  ori(Alpha, Beta, Gamma) - (0, 0, -90) --&gt; reading(127)
+pos(X,Y) - (0.6060, -0.2000),  ori(Alpha, Beta, Gamma) - (0, 0, 0)   --&gt; reading(70)
+pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; reading(73)
+</code></pre>
 <p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
-<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>lab3_adc</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
+<p><strong>Step-6:</strong> In the Package Explorer (left pane), right click on <strong>lab3_adc</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
 <pre><code class="language-bash">avr_hex_file_generator -cpp src/lab3_adc_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
 </code></pre>
 <p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab3_adc_main.hex</strong> file along with other build files.</p>
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-3_output.png"></center>
-<p><strong>Step-4:</strong> Load the hex file on the SimulIDE circuit once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
+<p><strong>Step-7:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
 <ul>
@@ -262,7 +259,8 @@ Enter 'Y' / 'y' to take the next sensor reading or 'Q' / 'q' to quit: y
 <p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KibX8tNKv4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h4><a class="header" href="#expected-output---simulide" id="expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
-<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation Guide provided to you)</p>
+<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MkdOMZZwaOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </main>
 
