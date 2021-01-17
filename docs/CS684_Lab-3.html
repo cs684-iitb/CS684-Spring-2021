@@ -165,7 +165,7 @@
 <hr />
 <h4><a class="header" href="#aim" id="aim">AIM</a></h4>
 <p>In this experiment, you will interface ADC with the micro-controller. The aim of this experiment is to get you familiar with ADC present on ATmega2560.</p>
-<p>In this experiment, you will interface the White Line and IR Proximity sensors. Your task is to get the <strong>8-bit</strong> ADC result from the <strong>three white line</strong> sensors and <strong>5th IR proximity</strong> sensors in Single Conversion Mode and display the ADC converted digital values on UART Serial Terminal.</p>
+<p>In this experiment, you will interface the White Line and IR Proximity sensors. Your task is to get the <strong>8-bit</strong> ADC result from the <strong>three white line</strong> sensors and <strong>5th IR proximity</strong> sensor in Single Conversion Mode and display the ADC converted digital values on UART Serial Terminal.</p>
 <p>The program is provided as <strong>Eclipse</strong> project.  But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments. </p>
 <hr />
 <h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
@@ -173,28 +173,26 @@
 <li>Left White Line Sensor 	    : <strong>PC1 [ ADC Channel 1 ]</strong></li>
 <li>Center White Line Sensor    : <strong>PC0 [ ADC Channel 0 ]</strong></li>
 <li>Right White Line Sensor       : <strong>PC2 [ ADC Channel 2 ]</strong></li>
-<li>3rd IR Proximity Sensor        : <strong>PC3 [ ADC Channel 3 ]</strong></li>
-<li>4th IR Proximity Sensor        : <strong>PC4 [ ADC Channel 4 ]</strong></li>
 <li>5th IR Proximity Sensor        : <strong>PC5 [ ADC Channel 5 ]</strong></li>
 </ul>
 <hr />
 <h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
-<p><strong>Step-1:</strong>  Open the project <strong>lab3_adc</strong> from <strong>Lab_3</strong> folder. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab2_adc</strong> folder to open the project.</p>
-<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>Lab3_ADC</strong> function to achieve the following:</p>
-<p>In while loop, send sensors data on UART.</p>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab3_adc.zip" target="_blank">lab3_adc</a></b> zip file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab3_adc</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>send_sensor_data</strong> function to achieve the following:</p>
+<p>Read data from 3 white line sensors and IR proximity sensor. Print IR proximity sesnor data on the terminal.</p>
 <blockquote>
 <p><strong>Note:</strong> While completing, you have to use following functions defined in <b>eBot_MCU_Predef.h</b> header file:</p>
 </blockquote>
 <ol>
 <li>unsigned char convert_analog_channel_data( unsigned char sensor_channel_number );</li>
-<li>void uart_tx_string(char *data);</li>
+<li>int print_ir_prox_5_data(unsigned char);</li>
 </ol>
 <p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get build successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
 <pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
 </code></pre>
 <p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
 <ul>
-<li>Open the scene <strong>lab3_adc.ttt</strong> from <strong>Lab_3</strong> folder. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab3_adc.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>Download the <b><a href="./resources/lab3_adc.ttt" target="_blank">lab3_adc.ttt</a></b> scene. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab3_adc.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
 <li>In Eclipse, right click on <strong>lab3_adc</strong> folder (Project Explorer - left pane) and select <em>Run As --&gt; Local C/C++ Application</em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
 </ul>
 <pre><code class="language-pseudocode">Connection Success ... 
@@ -204,14 +202,35 @@
 
  Please Enter Y to Start Simulation:	  Y
 </code></pre>
-<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. You can verify the output by referring to <em>Expected Output - CoppeliaSim</em> video.</p>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim and following message will be displayed on the console:</p>
+<pre><code class="language-pseudocode">Simulation started correctly.
+Initialized all sensors in the current CoppeliaSim scene.
+Enter 'Y' / 'y' to take the next sensor reading or 'Q' / 'q' to quit: y
+</code></pre>
+<p>You can check the reading of IR proximity sensor by entering 'Y' / 'y'. Change the position of the robot (in CoppeliaSim) and observe the readings (in Eclipse). </p>
+<blockquote>
+<p><strong>Note:</strong> To change the position of the robot (in CoppeliaSim) click on <em>object/item shift</em> and enter X and Y co-ordinates in position tab. <br></p>
+</blockquote>
+<blockquote>
+<p>To change the orientation of the robot, click on <em>object/item rotate</em> and enter alpha, beta and gamma values in orientation tab. (Refer EXPECTED OUTPUT - CoppeliaSim video)</p>
+</blockquote>
+<ul>
+<li>
+<p>Verify the readings for following position and orientation:</p>
+<p>| Position (X,Y) - Orientation (Alpha, Beta, Gamma)   | Sensor Reading |
+| :----------------: | :----------------: |
+|   (0.2020, 0.2000) - (0, 0, 90)    | 127 |
+|   (0.2020, -0.2000) - (0, 0, -90)    | 127 |
+|     (0.6060, -0.2000) - (0, 0, 0)     | 70 |
+|     (-0.6060, -0.2000) - (0, 0, 90)     | 73 |</p>
+</li>
+</ul>
 <p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
-<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>src</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
-<pre><code class="language-bash">avr_hex_file_generator -cpp lab3_adc_main -dcpp eBot_Sandbox -dc eBot_MCU_Predef -m atmega328p
+<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>lab3_adc</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
+<pre><code class="language-bash">avr_hex_file_generator -cpp src/lab3_adc_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
 </code></pre>
 <p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab3_adc_main.hex</strong> file along with other build files.</p>
-<pre><code class="language-pseudocode">**======== Rebuild All: 1 succeeded, 0 failed, 0 skipped ========**
-</code></pre>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-3_output.png"></center>
 <p><strong>Step-4:</strong> Load the hex file on the SimulIDE circuit once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
@@ -240,11 +259,10 @@
 </ul>
 <hr />
 <h4><a class="header" href="#expected-output---coppeliasim" id="expected-output---coppeliasim">EXPECTED OUTPUT - CoppeliaSim</a></h4>
+<p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KibX8tNKv4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h4><a class="header" href="#expected-output---simulide" id="expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
 <p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation Guide provided to you)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iA9HXVOefkY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="z-index:5;position:relative;"></iframe>
-<hr />
-<h4><a class="header" href="#submission-instructions" id="submission-instructions">SUBMISSION INSTRUCTIONS</a></h4>
 
                     </main>
 
