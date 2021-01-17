@@ -174,28 +174,40 @@
 <p>Motors are connected to the Microcontroller through L293D Motor Driver IC.</p>
 <p>Motors Pin	  	Microcontroller Pin </p>
 <ul>
-<li>RB		--&gt; 	PC3</li>
-<li>RF		--&gt; 	PC2</li>
-<li>LF		--&gt; 	PC1</li>
-<li>LB		--&gt; 	PC0</li>
+<li>
+<p>RB		--&gt; 	<b>PC3</b></p>
+</li>
+<li>
+<p>RF		--&gt; 	<b>PC2</b></p>
+</li>
+<li>
+<p>LF		--&gt; 	<b>PC1</b></p>
+</li>
+<li>
+<p>LB		--&gt; 	<b>PC0</b></p>
+</li>
 </ul>
 </li>
 <li>
 <p>PWM Pins of the Microcontroller are connected to the L293D Motor Driver IC.</p>
 <p>PWM Pin				Microcontroller Pin </p>
 <ul>
-<li>Left Motor	  --&gt;	PD5</li>
-<li>Right Motor	  --&gt;	PD6</li>
+<li>
+<p>Left Motor	  --&gt;	<b>PD5</b></p>
+</li>
+<li>
+<p>Right Motor	  --&gt;	<b>PD6</b></p>
+</li>
 </ul>
 </li>
 </ul>
 <hr />
 <h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
-<p><strong>Step-1:</strong>  Open the project <strong>lab2_motor_pwm</strong> from <strong>Lab_2</strong> folder. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab2_motor_pwm</strong> folder to open the project.</p>
-<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>Lab2_MOTOR_PWM</strong> function to achieve the following:</p>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab2_motor_pwm.zip" target="_blank">lab1_motor_pwm</a></b> zip file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab2_motor_pwm</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>traverse_s_shape</strong> function to achieve the following:</p>
 <ol>
 <li>Move the robot in forward direction.</li>
-<li>In the while loop, the duty cycle is set as complement of each other for the left and right motors, it is incremented by one every ten milliseconds till 255.</li>
+<li>In the while loop, set the speed as complement of each other for the left and right motors and increment it by one every ten milliseconds till 255.</li>
 </ol>
 <blockquote>
 <p><strong>Note:</strong> While completing, you have to use following functions defined in <b>eBot_MCU_Predef.h</b> header file:</p>
@@ -209,7 +221,7 @@
 </code></pre>
 <p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
 <ul>
-<li>Open the scene <strong>lab2_motor_pwm.ttt</strong> from <strong>Lab_2</strong> folder. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab2_motor_pwm.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>Download the <b><a href="./resources/eBot.ttm" target="_blank">eBot.ttm</a></b> model. Start CoppeliaSim, click on <em>File --&gt; Load Model</em> and browse for <strong>eBot.ttm</strong> file. This will load the robot model on the scene. (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
 <li>In Eclipse, right click on <strong>lab2_motor_pwm</strong> folder (Project Explorer - left pane) and select <em>Run As --&gt; Local C/C++ Application</em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
 </ul>
 <pre><code class="language-pseudocode">Connection Success ... 
@@ -220,20 +232,23 @@
  Please Enter Y to Start Simulation:	  Y
 </code></pre>
 <p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. You can verify the output by referring to <em>Expected Output - CoppeliaSim</em> video.</p>
+<blockquote>
+<p><strong>Note:</strong> For better angle, you can change the perspective of the scene using page selector. <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/CoppeliaSim_page_selector.png"></center></p>
+</blockquote>
 <p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
-<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>src</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
+<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>lab2_motor_pwm</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
 <pre><code class="language-bash">avr_hex_file_generator -cpp src/lab2_motor_pwm_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
 </code></pre>
 <p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab2_motor_pwm_main.hex</strong> file along with other build files.</p>
-<pre><code class="language-pseudocode">**======== Rebuild All: 1 succeeded, 0 failed, 0 skipped ========**
-</code></pre>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclpse_lab-2_output.png"></center>
 <p><strong>Step-4:</strong> Load the hex file on the SimulIDE circuit once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
 <ul>
 <li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>firebird_simulation.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
 </ul>
-<pre><code class="language-c">   // Motor direction registers and pins
+<pre><code class="language-c">
+   // Motor direction registers and pins
    #define		motors_dir_ddr_reg		DDRC
    #define		motors_dir_port_reg		PORTC
    #define 	motors_RB_pin			PC3		// 3
@@ -280,11 +295,11 @@
 </ul>
 <hr />
 <h4><a class="header" href="#expected-output---coppeliasim" id="expected-output---coppeliasim">EXPECTED OUTPUT - CoppeliaSim</a></h4>
+<p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/txrcqvKHMcE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 <h4><a class="header" href="#expected-output---simulide" id="expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
-<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation Guide provided to you)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iA9HXVOefkY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="z-index:5;position:relative;"></iframe>
-<hr />
-<h4><a class="header" href="#submission-instructions" id="submission-instructions">SUBMISSION INSTRUCTIONS</a></h4>
+<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MdY53wVycGw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </main>
 
