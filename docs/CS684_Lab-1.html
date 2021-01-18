@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2020</title>
+        <title>Lab 1 - CS684 Spring 2021</title>
         
         
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -128,7 +128,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">CS684 Spring 2020</h1>
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
 
                     <div class="right-buttons">
                         
@@ -163,8 +163,11 @@
                         <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
 <center><h4><a class="header" href="#lab-1-bar-graph-leds-and-interrupt-switch-interfacing" id="lab-1-bar-graph-leds-and-interrupt-switch-interfacing">Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</a></h4></center>
 <hr />
+<h5><a class="header" href="#learning-resources" id="learning-resources">LEARNING RESOURCES</a></h5>
+<p>This lab requires understanding of I/O interfacing with AVR microcontroller and basic knowledge about Masking. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
+<hr />
 <h4><a class="header" href="#aim" id="aim">AIM</a></h4>
-<p>In this experiment, you will interface the Bar-graph LEDs and the Interrupt Switch to ATmega2560. The aim of this experiment is to get you familiar with the configuring and interfacing of Input and Output devices.</p>
+<p>In this lab, you will interface the Bar-graph LEDs and the Interrupt Switch to ATmega2560. The aim of this lab is to get you familiar with the configuring and interfacing of Input and Output devices.</p>
 <p>Your task is to toggle the status of 2 Bar-graph LEDs depending on whether the Interrupt Switch is pressed or released.</p>
 <p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments.</p>
 <hr />
@@ -209,7 +212,7 @@
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
 <ul>
-<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>firebird_simulation.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
+<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
 </ul>
 <pre><code class="language-c"> //For Interrupt Switch:
 
@@ -226,19 +229,19 @@
   #define 	bar_graph_led_6_pin 		5		// PB5
 </code></pre>
 <ul>
-<li>You have to use these constants declared in <strong>firebird_simulation.h</strong> and the Masking Operators to complete the lab.</li>
+<li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
 </ul>
 <hr />
 <h4><a class="header" href="#simulation-expected-output" id="simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
 <p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JnWsCg0AsYA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/JnWsCg0AsYA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="Installation_instructions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="Resources.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
@@ -256,7 +259,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="Installation_instructions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="Resources.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 

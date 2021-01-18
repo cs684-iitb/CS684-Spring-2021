@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 3 - CS684 Spring 2020</title>
+        <title>Lab 3 - CS684 Spring 2021</title>
         
         
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -128,7 +128,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">CS684 Spring 2020</h1>
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
 
                     <div class="right-buttons">
                         
@@ -163,9 +163,12 @@
                         <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
 <center><h4><a class="header" href="#lab-3-adc-interfacing" id="lab-3-adc-interfacing">Lab 3: ADC Interfacing</a></h4></center>
 <hr />
+<h5><a class="header" href="#learning-resources" id="learning-resources">LEARNING RESOURCES</a></h5>
+<p>This lab requires understanding of sensors interfacing with AVR microcontroller and basic knowledge about Analog to Digital Conversion. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
+<hr />
 <h4><a class="header" href="#aim" id="aim">AIM</a></h4>
-<p>In this experiment, you will interface ADC with the micro-controller. The aim of this experiment is to get you familiar with ADC present on ATmega2560.</p>
-<p>In this experiment, you will interface the White Line and IR Proximity sensors. Your task is to get the <strong>8-bit</strong> ADC result from the <strong>three white line</strong> sensors and <strong>5th IR proximity</strong> sensor in Single Conversion Mode and display the ADC converted digital values on UART Serial Terminal.</p>
+<p>In this lab, you will interface ADC with the micro-controller. The aim of this lab is to get you familiar with ADC present on ATmega2560.</p>
+<p>In this lab, you will interface the White Line and IR Proximity sensors. Your task is to get the <strong>8-bit</strong> ADC result from the <strong>three white line</strong> sensors and <strong>5th IR proximity</strong> sensor in Single Conversion Mode and display the ADC converted digital values on UART Serial Terminal.</p>
 <p>The program is provided as <strong>Eclipse</strong> project.  But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments. </p>
 <hr />
 <h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
@@ -232,7 +235,7 @@ pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; read
 <hr />
 <h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
 <ul>
-<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>firebird_simulation.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
+<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
 </ul>
 <pre><code class="language-c">   // For 3 White Line Sensors
    #define 	wl_sensors_ddr_reg			    DDRC
@@ -252,15 +255,15 @@ pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; read
    
 </code></pre>
 <ul>
-<li>You have to use these constants declared in <strong>firebird_simulation.h</strong> and the Masking Operators to complete the lab.</li>
+<li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
 </ul>
 <hr />
 <h4><a class="header" href="#expected-output---coppeliasim" id="expected-output---coppeliasim">EXPECTED OUTPUT - CoppeliaSim</a></h4>
 <p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KibX8tNKv4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/KibX8tNKv4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h4><a class="header" href="#expected-output---simulide" id="expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
 <p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MkdOMZZwaOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/MkdOMZZwaOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </main>
 
