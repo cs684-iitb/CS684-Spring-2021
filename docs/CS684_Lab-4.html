@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Welcome - CS684 Spring 2021</title>
+        <title>Lab 4 - CS684 Spring 2021</title>
         
         
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item expanded "><a href="CS684_Lab-4.html" class="active">Lab 4</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,33 +160,73 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center>
-    <h1><a class="header" href="#welcome-to-cs684-embedded-systems-labs" id="welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
-    <h2><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya" id="instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
-</center>
+                        <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-4-case-study---adaptive-cruise-control-embedded-c" id="lab-4-case-study---adaptive-cruise-control-embedded-c">Lab 4: Case Study - Adaptive Cruise Control (Embedded C)</a></h4></center>
 <hr />
-<h2><a class="header" href="#lab-schedule" id="lab-schedule">Lab Schedule:</a></h2>
-<table><thead><tr><th align="center">Sr. No</th><th align="center">Lab</th><th align="center">Deadline</th></tr></thead><tbody>
-<tr><td align="center">0</td><td align="center">Installation of Software</td><td align="center">21-01-2021</td></tr>
-<tr><td align="center">1</td><td align="center">Bar-graph LEDs and Interrupt Switch Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">2</td><td align="center">Speed Control using Phase Correct PWM Mode</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">3</td><td align="center">ADC Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">4</td><td align="center">Case Study: Adaptive Cruise Control (Embedded C)</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">5</td><td align="center">Introduction to RTOS</td><td align="center">-</td></tr>
-<tr><td align="center">6</td><td align="center">Case Study: Adaptive Cruise Control (Statecharts)</td><td align="center"></td></tr>
-<tr><td align="center">7</td><td align="center">Case Study: Adaptive Cruise Control (Lustre)</td><td align="center"></td></tr>
-</tbody></table>
+<h4><a class="header" href="#aim" id="aim">AIM</a></h4>
+<p>In this task, you will learn the concept of line following algorithm.</p>
+<ul>
+<li>The arena provided to you is made up of curved, zig-zag, and straight paths with a START and GOAL position for the robot as shown in following figure.</li>
+<li>Arena also consists of obstacles randomly placed.</li>
+<li>You have to program the robot which will begin from START position, follow the path avoiding obstacles and stop inside the GOAL position.</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-4_arena.png"></center>
+<p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete to achive the aim.</p>
+<hr />
+<h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab4_line_follower_robot.zip" target="_blank">lab4_line_follower_robot</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab4_line_follower_robot</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>traverse_line_to_goal</strong> function to achieve the following:</p>
+<ol>
+<li>Robot starts from START position.</li>
+<li>Follows the line and checks for obstacles.</li>
+<li>If obstacle is found on a path, avoids it and plans the next shortest path.</li>
+<li>Stops at GOAL position.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> While completing, you have to use the functions defined in <b>eBot_MCU_Predef.h</b> header file. In <strong>src/eBot_Sandbox.cpp</strong> file, along with <strong>traverse_line_to_goal</strong> function, some other helper functions are provided. You can complete and use those functions or create your won set of helper functions.</p>
+</blockquote>
+<p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get build successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
+<pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
+</code></pre>
+<p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
+<ul>
+<li>Download the <b><a href="./resources/lab4_line_follower_robot.ttt" target="_blank">lab4_line_follower_robot.ttt</a></b> scene. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab4_line_follower_robot.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>In Eclipse, right click on <strong>lab4_line_follower_robot</strong> folder (Project Explorer - left pane) and select <em>Run As --&gt; Local C/C++ Application</em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
+</ul>
+<pre><code class="language-pseudocode">Connection Success ... 
+0
+0
+0
+
+ Please Enter Y to Start Simulation:	  Y
+</code></pre>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. </p>
+<hr />
+<h4><a class="header" href="#simulation-expected-output" id="simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
+<p>​<strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/z6t9dQiCoLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<blockquote>
+<p><strong>Note:</strong> Do not hardcode the path in program. Your code should be generic and it should work for any obstacle positions. During evaluation, your code will be tested for different scene - in which arena will be same but obstacles will be placed at different positions.</p>
+</blockquote>
+<p>Following rules will be followed for obstacle placement:</p>
+<ul>
+<li>No obstacle will be placed on curved or zig-zag path.</li>
+<li>Obstacle will always be placed on a line and between two nodes.</li>
+<li>Only three colored (red, green and blue) obstacles will be used. </li>
+<li>Any number of obstacles can be present on the arena.</li>
+</ul>
+<center><h3>All the best!</center>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-
-                        
-                            <a rel="next" href="Installation_instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="CS684_Lab-3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+                        
+
                         
 
                         <div style="clear: both"></div>
@@ -196,11 +236,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-
-                
-                    <a rel="next" href="Installation_instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="CS684_Lab-3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+                
+
                 
             </nav>
 
