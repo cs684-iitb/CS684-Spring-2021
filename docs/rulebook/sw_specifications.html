@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Welcome - CS684 Spring 2021</title>
+        <title>[3] HW/SW Specifications - CS684 Spring 2021</title>
         
         
 
@@ -18,26 +18,26 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -50,7 +50,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="../Welcome.html">Welcome</a></li><li class="chapter-item "><a href="../Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="../Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="../CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="../CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="../CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="../CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item expanded "><a href="../rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="../rulebook/arena.html">[2] Arena</a></li><li class="chapter-item expanded "><a href="../rulebook/sw_specifications.html" class="active">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="../rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="../rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,31 +160,61 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center>
-    <h1 id="welcome-to-cs684-embedded-systems-labs"><a class="header" href="#welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
-    <h2 id="instructors-prof-kavi-arya-and-prof-paritosh-pandya"><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
-</center>
+                        <center><h2 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h2></center>
+<center><h3 id="rulebook-3-hardware-and-software-specifications"><a class="header" href="#rulebook-3-hardware-and-software-specifications">Rulebook: [3] Hardware and Software Specifications</a></h3></center>
+<br/>
+<!-- toc -->
 <hr />
-<h2 id="lab-schedule"><a class="header" href="#lab-schedule">Lab Schedule:</a></h2>
-<table><thead><tr><th align="center">Sr. No</th><th align="center">Lab</th><th align="center">Deadline</th></tr></thead><tbody>
-<tr><td align="center">0</td><td align="center">Installation of Software</td><td align="center">21-01-2021</td></tr>
-<tr><td align="center">1</td><td align="center">Bar-graph LEDs and Interrupt Switch Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">2</td><td align="center">Speed Control using Phase Correct PWM Mode</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">3</td><td align="center">ADC Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">4</td><td align="center">Case Study: Adaptive Cruise Control (Embedded C)</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">5</td><td align="center">Introduction to RTOS</td><td align="center">-</td></tr>
-<tr><td align="center">6</td><td align="center">Case Study: Adaptive Cruise Control (Statecharts)</td><td align="center"></td></tr>
-<tr><td align="center">7</td><td align="center">Case Study: Adaptive Cruise Control (Lustre)</td><td align="center"></td></tr>
-</tbody></table>
+<h2 id="1-hardware-specifications"><a class="header" href="#1-hardware-specifications">1. Hardware Specifications</a></h2>
+<ul>
+<li>
+<p><strong>Use of Firebird V and ESP32:</strong></p>
+<ul>
+<li>All teams must use Firebird V robot and ESP32 development board provided by e-Yantra.</li>
+<li>Team shall not dismantle the robot.</li>
+<li>The robot should be completely autonomous. The team is not allowed to use any wireless remote or any other devices such as a camera while the robot is performing the task. The robot are only allowed to communicate using the Wireless Protocol mentioned.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use of additional components:</strong></p>
+<ul>
+<li>Firebird V and ESP32 communicate using UART. No other microcontroller-based board shall be attached to the Firebird V robot except ESP32.</li>
+<li>Teams are not allowed to connect external actuators or structural hardware to the Firebird V robot.</li>
+<li>Teams are not allowed to use any additional sensor apart from ones provided with the Robot.</li>
+</ul>
+</li>
+<li>
+<p><strong>Power Supply:</strong></p>
+<ul>
+<li>The robot can be charged through battery or auxiliary power supply. </li>
+<li>The team cannot use any other power source for powering the robot.</li>
+<li>The team can use auxiliary power during practice but the final demonstration should only be made using only battery powered robot.</li>
+</ul>
+</li>
+</ul>
+<br>
+<hr />
+<h2 id="2-software-specifications"><a class="header" href="#2-software-specifications">2. Software Specifications</a></h2>
+<ul>
+<li>Teams can use Eclipse, for writting code for AVR microcontroller. Teams are free to use any other open source Integrated Development Environment (IDE) for programming AVR microcontroller.</li>
+<li>Use of any non-open source libraries is not allowed and will result in disqualification.</li>
+<li>Teams can use any language and open source libraries for creating an interface (desktop app or web app).</li>
+</ul>
+<br>
+<hr />
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="../rulebook/arena.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="Installation_instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../rulebook/theme_rules.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -196,9 +226,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="../rulebook/arena.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="Installation_instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../rulebook/theme_rules.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -221,14 +255,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

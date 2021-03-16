@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Welcome - CS684 Spring 2021</title>
+        <title>[2] Arena - CS684 Spring 2021</title>
         
         
 
@@ -18,26 +18,26 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -50,7 +50,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="../Welcome.html">Welcome</a></li><li class="chapter-item "><a href="../Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="../Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="../CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="../CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="../CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="../CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item expanded "><a href="../rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item expanded "><a href="../rulebook/arena.html" class="active">[2] Arena</a></li><li class="chapter-item "><a href="../rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="../rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="../rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,31 +160,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center>
-    <h1 id="welcome-to-cs684-embedded-systems-labs"><a class="header" href="#welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
-    <h2 id="instructors-prof-kavi-arya-and-prof-paritosh-pandya"><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
-</center>
+                        <center><h2 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h2></center>
+<center><h3 id="rulebook-2-arena"><a class="header" href="#rulebook-2-arena">Rulebook: [2] Arena</a></h3></center>
+<br/>
+<!-- toc -->
 <hr />
-<h2 id="lab-schedule"><a class="header" href="#lab-schedule">Lab Schedule:</a></h2>
-<table><thead><tr><th align="center">Sr. No</th><th align="center">Lab</th><th align="center">Deadline</th></tr></thead><tbody>
-<tr><td align="center">0</td><td align="center">Installation of Software</td><td align="center">21-01-2021</td></tr>
-<tr><td align="center">1</td><td align="center">Bar-graph LEDs and Interrupt Switch Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">2</td><td align="center">Speed Control using Phase Correct PWM Mode</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">3</td><td align="center">ADC Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">4</td><td align="center">Case Study: Adaptive Cruise Control (Embedded C)</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">5</td><td align="center">Introduction to RTOS</td><td align="center">-</td></tr>
-<tr><td align="center">6</td><td align="center">Case Study: Adaptive Cruise Control (Statecharts)</td><td align="center"></td></tr>
-<tr><td align="center">7</td><td align="center">Case Study: Adaptive Cruise Control (Lustre)</td><td align="center"></td></tr>
+<h2 id="1-arena-configuration"><a class="header" href="#1-arena-configuration">1. Arena Configuration</a></h2>
+<ul>
+<li>For ease of reference:
+<ul>
+<li>The Plots in the arena are numbered from <strong>1</strong> to <strong>16</strong> as illustrated in red in Figure 1a.</li>
+<li>The Nodes in the arena are number from <strong>1</strong> through <strong>25</strong> as illustrated in Figure 1b.</li>
+</ul>
+</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Arena_configuration.png"></center>
+  <center>Figure 1: Arena design</center>
+<br>
+<hr />
+<h2 id="2-preparing-the-debris-and-injured-survivors"><a class="header" href="#2-preparing-the-debris-and-injured-survivors">2. Preparing the Debris and Injured Survivors</a></h2>
+<ul>
+<li>
+<p>Material required:</p>
+<ul>
+<li>Red, Green and White color chart paper</li>
+</ul>
+</li>
+<li>
+<p>Preparing Debris and Injured Survivors:</p>
+<ul>
+<li>
+<p>Teams will prepare three kinds of chart paper patches. Characteristics of these are given in Table 1.</p>
+<table><thead><tr><th align="center">Type of Patch</th><th align="center">Length (cm)</th><th align="center">Width (cm)</th><th align="center">Color</th><th align="center">Count</th></tr></thead><tbody>
+<tr><td align="center">Debris</td><td align="center">40</td><td align="center">6</td><td align="center"><strong>White</strong></td><td align="center">10</td></tr>
+<tr><td align="center">Survivors with Major Injuries</td><td align="center">26</td><td align="center">26</td><td align="center"><span style="color:red;"><strong>Red</strong></span></td><td align="center">10</td></tr>
+<tr><td align="center">Survivors with Minor Injuries</td><td align="center">26</td><td align="center">26</td><td align="center"><span style="color:green;"><strong>Green</strong></span></td><td align="center">10</td></tr>
 </tbody></table>
+<p>Table 1: Characteristics of Debris and Injured Survivors</p>
+</li>
+</ul>
+</li>
+<li>
+<p>After preparing these patches, teams must paste them on the arena according to the final arena setup given below.</p>
+</li>
+</ul>
+<br>
+<hr />
+<h2 id="3-placing-the-debris-and-injured-survivors-on-arena"><a class="header" href="#3-placing-the-debris-and-injured-survivors-on-arena">3. Placing the Debris and Injured Survivors on Arena</a></h2>
+<ul>
+<li>
+<p>Placement of Debris:</p>
+<ul>
+<li>White patches of size 40cm x 6cm are used to indicate the Debris.</li>
+<li>These patches need to be sticked on the Path between two nodes and covering Mid-point Marker.</li>
+</ul>
+</li>
+<li>
+<p>Placement of Injured Survivors:</p>
+<ul>
+<li>Green and Red patches of size 26cm x 26cm are used to indicate minor and severly injured survivors.</li>
+<li>These colored patches need to be sticked in the clearing zone.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> You must use transparent sellotape to stick these patches.</p>
+<br>
+<hr />
+<h2 id="4-final-arena-setup"><a class="header" href="#4-final-arena-setup">4. Final Arena Setup</a></h2>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Arena_with_chart_paper.png"></center>
+  <center>Figure 2: Arena Final Setup</center>
+<p><strong>Note:</strong> The position of Debris and Survivors is random. During final demonstration, position will be different. Your algorithm should be generic.</p>
+<br>
+<hr />
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="../rulebook/theme_description.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="Installation_instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../rulebook/sw_specifications.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -196,9 +256,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="../rulebook/theme_description.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="Installation_instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../rulebook/sw_specifications.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -221,14 +285,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

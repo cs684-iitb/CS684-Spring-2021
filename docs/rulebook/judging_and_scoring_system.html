@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Welcome - CS684 Spring 2021</title>
+        <title>[5] Judging and Scoring System - CS684 Spring 2021</title>
         
         
 
@@ -18,26 +18,26 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -50,7 +50,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="../Welcome.html">Welcome</a></li><li class="chapter-item "><a href="../Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="../Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="../CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="../CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="../CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="../CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item expanded "><a href="../rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="../rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="../rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="../rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item expanded "><a href="../rulebook/judging_and_scoring_system.html" class="active">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,33 +160,50 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center>
-    <h1 id="welcome-to-cs684-embedded-systems-labs"><a class="header" href="#welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
-    <h2 id="instructors-prof-kavi-arya-and-prof-paritosh-pandya"><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
-</center>
+                        <center><h2 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h2></center>
+<center><h3 id="rulebook-5-judging-and-scoring-system"><a class="header" href="#rulebook-5-judging-and-scoring-system">Rulebook: [5] Judging and Scoring System</a></h3></center>
+<br/>
+<!-- toc -->
 <hr />
-<h2 id="lab-schedule"><a class="header" href="#lab-schedule">Lab Schedule:</a></h2>
-<table><thead><tr><th align="center">Sr. No</th><th align="center">Lab</th><th align="center">Deadline</th></tr></thead><tbody>
-<tr><td align="center">0</td><td align="center">Installation of Software</td><td align="center">21-01-2021</td></tr>
-<tr><td align="center">1</td><td align="center">Bar-graph LEDs and Interrupt Switch Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">2</td><td align="center">Speed Control using Phase Correct PWM Mode</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">3</td><td align="center">ADC Interfacing</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">4</td><td align="center">Case Study: Adaptive Cruise Control (Embedded C)</td><td align="center">18-02-2021</td></tr>
-<tr><td align="center">5</td><td align="center">Introduction to RTOS</td><td align="center">-</td></tr>
-<tr><td align="center">6</td><td align="center">Case Study: Adaptive Cruise Control (Statecharts)</td><td align="center"></td></tr>
-<tr><td align="center">7</td><td align="center">Case Study: Adaptive Cruise Control (Lustre)</td><td align="center"></td></tr>
-</tbody></table>
+<p>$$ Score = (600 - T) + (30 * CDS) + (\sum_{i=1}^{n} (GT_i - TT_i)) * 25  + (10 * NR) + AB - (P * 30)$$</p>
+<br>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><em>T</em> : Time taken by robot to complete the Task</p>
+</li>
+<li>
+<p><em>CDS</em> : Number of Survivors detected correctly</p>
+</li>
+<li>
+<p>$GT_i$ : Given time for the ith request</p>
+</li>
+<li>
+<p>$TT_i$ : Time taken by robot to complete the ith request</p>
+</li>
+<li>
+<p><em>NR</em> : Number of requests satisfied by the robot </p>
+</li>
+<li>
+<p><em>AB</em> : Bonus of 100 is provided based on the creativity shown in designing desktop/web app</p>
+</li>
+<li>
+<p><em>P</em> : Penalty is incurred each time robot dashes against Debris and for each Reposition.
+<br></p>
+</li>
+</ul>
+<hr />
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-
-                        
-                            <a rel="next" href="Installation_instructions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="../rulebook/theme_rules.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
+                        
+
                         
 
                         <div style="clear: both"></div>
@@ -196,11 +213,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-
-                
-                    <a rel="next" href="Installation_instructions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="../rulebook/theme_rules.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
+                
+
                 
             </nav>
 
@@ -221,14 +238,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

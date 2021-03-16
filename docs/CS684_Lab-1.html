@@ -96,7 +96,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -160,18 +160,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4><a class="header" href="#lab-1-bar-graph-leds-and-interrupt-switch-interfacing" id="lab-1-bar-graph-leds-and-interrupt-switch-interfacing">Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</a></h4></center>
+                        <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4 id="lab-1-bar-graph-leds-and-interrupt-switch-interfacing"><a class="header" href="#lab-1-bar-graph-leds-and-interrupt-switch-interfacing">Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</a></h4></center>
 <hr />
-<h5><a class="header" href="#learning-resources" id="learning-resources">LEARNING RESOURCES</a></h5>
+<h5 id="learning-resources"><a class="header" href="#learning-resources">LEARNING RESOURCES</a></h5>
 <p>This lab requires understanding of I/O interfacing with AVR microcontroller and basic knowledge about Masking. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
 <hr />
-<h4><a class="header" href="#aim" id="aim">AIM</a></h4>
+<h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
 <p>In this lab, you will interface the Bar-graph LEDs and the Interrupt Switch to ATmega2560. The aim of this lab is to get you familiar with the configuring and interfacing of Input and Output devices.</p>
 <p>Your task is to toggle the status of 2 Bar-graph LEDs depending on whether the Interrupt Switch is pressed or released.</p>
 <p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments.</p>
 <hr />
-<h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
+<h4 id="connections"><a class="header" href="#connections">CONNECTIONS</a></h4>
 <ul>
 <li>
 <p>Interrupt Switch :  <strong>PD2</strong></p>
@@ -186,7 +186,7 @@
 </li>
 </ul>
 <hr />
-<h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
+<h4 id="procedure"><a class="header" href="#procedure">PROCEDURE</a></h4>
 <p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab1_sw_led.zip" target="_blank">lab1_sw_led</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab1_sw_led</strong> folder to open the project.</p>
 <p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>toggle_leds_on_sw_press</strong> function to achieve the following:</p>
 <ol>
@@ -210,7 +210,7 @@
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-1_output.png"></center>
 <p><strong>Step-5:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
-<h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
+<h4 id="macros-to-use"><a class="header" href="#macros-to-use">MACROS to use</a></h4>
 <ul>
 <li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
 </ul>
@@ -232,7 +232,7 @@
 <li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
 </ul>
 <hr />
-<h4><a class="header" href="#simulation-expected-output" id="simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
+<h4 id="simulation-expected-output"><a class="header" href="#simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
 <p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
 <iframe width="710" height="315" src="https://www.youtube.com/embed/JnWsCg0AsYA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
