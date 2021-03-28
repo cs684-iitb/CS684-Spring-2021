@@ -17,16 +17,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
@@ -96,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="Resources.html" class="active">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item expanded "><a href="Resources.html" class="active">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-6.html">Lab 6</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +127,9 @@
                     <h1 class="menu-title">CS684 Spring 2021</h1>
 
                     <div class="right-buttons">
-                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
                         
                     </div>
                 </div>
@@ -204,12 +202,8 @@
 <iframe width="710" height="315" src="https://www.youtube.com/embed/FRf34y8CbBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>Additional Modules: </p>
 <ul>
-<li>
-<p><a href="https://youtu.be/rqsa2JqvrWA" target="_blank">Interrupts</a><br></p>
-</li>
-<li>
-<p><a href="https://youtu.be/SQIE1Cr7mzk" target="_blank">Position Encoder Interrupt</a></p>
-</li>
+<li><a href="https://youtu.be/rqsa2JqvrWA" target="_blank">Interrupts</a><br></li>
+<li><a href="https://youtu.be/SQIE1Cr7mzk" target="_blank">Position Encoder Interrupt</a></li>
 </ul>
 <hr>
 <h3><a class="header" href="#div-alignjustify-classmainblab-3-adc-interfacingbdiv" id="div-alignjustify-classmainblab-3-adc-interfacingbdiv"> <div align="justify" class="main"><b>Lab 3: ADC Interfacing</b></div></a></h3>
@@ -233,30 +227,16 @@
 <a href="./resources/CS684_Project_Task_1.pptx" target="_blank"> Task 1 PPT  </a> - Presented in class of <b><em>22nd March, 2021</em></b>
 <p><strong>Firebird V related Resources:</strong></p>
 <ul>
-<li>
-<p><a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V Hardware and Software Manuals</a></p>
-</li>
-<li>
-<p><a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560 Datasheet</a></p>
-</li>
-<li>
-<p><a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a></p>
-</li>
-<li>
-<p><a href="https://drive.google.com/drive/u/1/folders/1TPrljaSlRFnT5yZN1Gd8J9wUb6i-_Oh5" target="_blank">Color Sensor Interfacing on Firebird V</a></p>
-</li>
-<li>
-<p><a href="https://drive.google.com/drive/u/1/folders/1vac3uNvSwOX17k1qqO0ARTgmKYEigYFd" target="_blank">Serial Communication between Firebird V and ESP 32</a></p>
-</li>
+<li><a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V Hardware and Software Manuals</a></li>
+<li><a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560 Datasheet</a></li>
+<li><a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a></li>
+<li><a href="https://drive.google.com/drive/u/1/folders/1TPrljaSlRFnT5yZN1Gd8J9wUb6i-_Oh5" target="_blank">Color Sensor Interfacing on Firebird V</a></li>
+<li><a href="https://drive.google.com/drive/u/1/folders/1vac3uNvSwOX17k1qqO0ARTgmKYEigYFd" target="_blank">Serial Communication between Firebird V and ESP 32</a></li>
 </ul>
 <p><strong>Simulation related Resources</strong></p>
 <ul>
-<li>
-<p><a href="./resources/search_n_rescue_scene.ttt" target="_blank">CoppeliaSim Scene File: search_n_rescue.ttt</a></p>
-</li>
-<li>
-<p><a href="./resources/search_n_rescue.zip" target="_blank">Eclipse Project Folder for Task 1</a></p>
-</li>
+<li><a href="./resources/search_n_rescue_scene.ttt" target="_blank">CoppeliaSim Scene File: search_n_rescue.ttt</a></li>
+<li><a href="./resources/search_n_rescue.zip" target="_blank">Eclipse Project Folder for Task 1</a></li>
 </ul>
 <p><strong>IoT Related Resources</strong></p>
 <ul>

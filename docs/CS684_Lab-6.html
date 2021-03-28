@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lab 1 - CS684 Spring 2021</title>
+        <title>Lab 6 - CS684 Spring 2021</title>
         
         
 
@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item expanded "><a href="CS684_Lab-1.html" class="active">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-6.html">Lab 6</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item expanded "><a href="CS684_Lab-6.html" class="active">Lab 6</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,93 +159,95 @@
                 <div id="content" class="content">
                     <main>
                         <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4><a class="header" href="#lab-1-bar-graph-leds-and-interrupt-switch-interfacing" id="lab-1-bar-graph-leds-and-interrupt-switch-interfacing">Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</a></h4></center>
-<hr />
-<h5><a class="header" href="#learning-resources" id="learning-resources">LEARNING RESOURCES</a></h5>
-<p>This lab requires understanding of I/O interfacing with AVR microcontroller and basic knowledge about Masking. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
-<hr />
+<center><h4><a class="header" href="#lab-6-case-study---adaptive-cruise-control-lustreheptagon" id="lab-6-case-study---adaptive-cruise-control-lustreheptagon">Lab 6: Case Study - Adaptive Cruise Control (Lustre/Heptagon)</a></h4></center>
+<hr></hr>
+<h4><a class="header" href="#solution" id="solution">Solution</a></h4>
+<p>Solution code for this task is available <a href="./resources/lab6_solution.zip" target="_blank">here</a>. </p>
+<p>Use <strong>integrate.sh</strong> from heptagon directory to compile and copy the reactive kernel code into project folder.</p>
+<h4><a class="header" href="#additional-tips" id="additional-tips">Additional Tips</a></h4>
+<ol>
+<li>Automatons are great and an exclusive feature. Use them whenever you should. Common scenarios are, you need a <strong>while like</strong> behaviour, you have a big if else ladder conditioned on multiple variables (compare <strong>move</strong> and <strong>moveAut</strong> in the solution) and nested states/multiple modes. </li>
+<li><a href="https://gitlab.inria.fr/synchrone/heptagon">Heptagon examples</a> on how to integrate external C code with heptagon. </li>
+</ol>
+<hr></hr>
 <h4><a class="header" href="#aim" id="aim">AIM</a></h4>
-<p>In this lab, you will interface the Bar-graph LEDs and the Interrupt Switch to ATmega2560. The aim of this lab is to get you familiar with the configuring and interfacing of Input and Output devices.</p>
-<p>Your task is to toggle the status of 2 Bar-graph LEDs depending on whether the Interrupt Switch is pressed or released.</p>
-<p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments.</p>
-<hr />
-<h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
+<p>In this task, you will learn to implement <strong>Adaptive Cruise Control</strong> using Synchronous Dataflow programming language <strong>Heptagon</strong>.</p>
 <ul>
-<li>
-<p>Interrupt Switch :  <strong>PD2</strong></p>
-</li>
-<li>
-<p>Bar-graph LED:</p>
-<ul>
-<li>LED 2   --&gt;   <strong>PB1</strong></li>
-<li>LED 6   --&gt;   <strong>PB5</strong></li>
-<li>LED 8   --&gt;   <strong>PB0</strong></li>
+<li>The arena provided to you is made up of curved, zig-zag, and straight paths with a START and GOAL position for the robot as shown in following figure.</li>
+<li>Arena also consists of obstacles randomly placed.</li>
+<li>You have to program the robot which will begin from START position, follow the path avoiding obstacles and stop at the GOAL position.</li>
 </ul>
-</li>
-</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-4_arena.png"></center>
+<p>The project folder can be imported as <strong>Eclipse</strong> or <strong>CMake</strong> project. </p>
 <hr />
 <h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
-<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab1_sw_led.zip" target="_blank">lab1_sw_led</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab1_sw_led</strong> folder to open the project.</p>
-<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>toggle_leds_on_sw_press</strong> function to achieve the following:</p>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab6_line_follower_robot.zip" target="_blank">lab6_line_follower_robot</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab6_line_follower_robot</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/supervisor.cpp</strong>, <strong>traverse_line_to_goal</strong> function performs the sense, step and actuate in a loop. You have to complete Heptagon program inside <strong>heptagon directory</strong> which when compiled gives you a reactive kernel implementing the step part. Your Heptagon program implement the following:</p>
 <ol>
-<li>Check whether the Interrupt Switch is pressed or not.</li>
-<li>If the Interrupt Switch is pressed, only the <strong>2nd</strong> LED will turn OFF and the <strong>8th</strong> LED will turn ON.</li>
-<li>If the Interrupt Switch is not pressed, the <strong>2nd</strong> LED will remain ON and only <strong>8th</strong> LED will turn OFF.</li>
+<li>Robot starts from START position.</li>
+<li>Follows the line and checks for obstacles.</li>
+<li>If obstacle is found on a path, avoids it and plans the next shortest path.</li>
+<li>Stops at GOAL position.</li>
 </ol>
 <blockquote>
-<p><strong>Note:</strong> While completing, you have to use following functions defined in <b>eBot_MCU_Predef.h</b> header file:</p>
+<p><strong>Note:</strong> You can write parts of the program in C/C++ if you must. While completing, you have to use the functions defined in <b>eBot_Sim_Predef.h</b> header file. </p>
+<p>There is an <strong>integrate.sh</strong> file in heptagon directory which you can run each time you change heptagon code to integrate it in the C/C++ project. </p>
 </blockquote>
-<ol>
-<li>bool interrupt_switch_pressed (void);</li>
-<li>void turn_on_bar_graph_led (unsigned char);</li>
-<li>void turn_off_bar_graph_led (unsigned char);</li>
-</ol>
-<p><strong>Step-3:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to Bar-graph LEDs and Interrupt Switch. Complete the pre-written functions with the help of comments provided.</p>
-<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>lab1_sw_led</strong> folder and select <em><strong>Show in Local Terminal --&gt; Terminal</strong></em>(bottom pane). Type the following command in the terminal:</p>
-<pre><code class="language-bash">avr_hex_file_generator -cpp src/lab1_sw_led_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
+<p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get built successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
+<pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
 </code></pre>
-<p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab1_sw_led_main.hex</strong> file along with other build files.</p>
-<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-1_output.png"></center>
-<p><strong>Step-5:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
-<hr />
-<h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
+<blockquote>
+<p><strong>Note:</strong> The default path to Heptagon C headers is <strong>/usr/local/lib/heptagon/c/</strong>. If you get build errors please include path in Eclipse, specific to your installation.</p>
+</blockquote>
+<p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
 <ul>
-<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
+<li>Use the <strong>lab6_line_follower_robot.ttt</strong> scene <strong>found in the project folder</strong>. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab6_line_follower_robot.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>In Eclipse, right click on <strong>lab6_line_follower_robot</strong> folder (Project Explorer - left pane) and select <em><strong>Run As --&gt; Local C/C++ Application</strong></em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
 </ul>
-<pre><code class="language-c"> //For Interrupt Switch:
+<pre><code class="language-pseudocode">Connection Success ... 
+0
+0
+0
 
- #define 	interrupt_sw_ddr_reg		DDRD
- #define 	interrupt_sw_port_reg 		PORTD
- #define 	interrupt_sw_pin 		2		// PD2
-
- //For Bar-graph LED:
- 
-  #define 	bar_graph_led_ddr_reg 		DDRB
-  #define 	bar_graph_led_port_reg 	PORTB
-  #define 	bar_graph_led_2_pin 		1		// PB1
-  #define 	bar_graph_led_8_pin 		0		// PB0
-  #define 	bar_graph_led_6_pin 		5		// PB5
+ Please Enter Y to Start Simulation:	  Y
 </code></pre>
-<ul>
-<li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
-</ul>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. </p>
 <hr />
 <h4><a class="header" href="#simulation-expected-output" id="simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
-<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
-<iframe width="710" height="315" src="https://www.youtube.com/embed/JnWsCg0AsYA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/z6t9dQiCoLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<blockquote>
+<p><strong>Note:</strong> Do not hardcode the path in program. Your code should be generic and it should work for any obstacle positions. During evaluation, your code will be tested for different scene - in which arena will be same but obstacles will be placed at different positions.</p>
+</blockquote>
+<p>Following rules will be followed for obstacle placement:</p>
+<ul>
+<li>
+<p>No obstacle will be placed on curved or zig-zag path.</p>
+</li>
+<li>
+<p>Obstacle will always be placed on a line and between two nodes.</p>
+</li>
+<li>
+<p>Only three colored (red, green and blue) obstacles will be used. </p>
+</li>
+<li>
+<p>Any number of obstacles can be present on the arena.</p>
+</li>
+</ul>
+<center><h3>All the best!</center>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="Resources.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="CS684_Lab-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="CS684_Lab-2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="rulebook/toc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -257,13 +259,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="Resources.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="CS684_Lab-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="CS684_Lab-2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="rulebook/toc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

@@ -1,0 +1,1215 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>CS684 Spring 2021</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-6.html">Lab 6</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">CS684 Spring 2021</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <center>
+    <h1><a class="header" href="#welcome-to-cs684-embedded-systems-labs" id="welcome-to-cs684-embedded-systems-labs">Welcome to CS684: Embedded Systems Labs!</a></h1>
+    <h2><a class="header" href="#instructors-prof-kavi-arya-and-prof-paritosh-pandya" id="instructors-prof-kavi-arya-and-prof-paritosh-pandya">Instructors: Prof. Kavi Arya and Prof. Paritosh Pandya</a></h2>
+</center>
+<hr />
+<h2><a class="header" href="#lab-schedule" id="lab-schedule">Lab Schedule:</a></h2>
+<table><thead><tr><th align="center">Sr. No</th><th align="center">Lab</th><th align="center">Deadline</th></tr></thead><tbody>
+<tr><td align="center">0</td><td align="center">Installation of Software</td><td align="center">21-01-2021</td></tr>
+<tr><td align="center">1</td><td align="center">Bar-graph LEDs and Interrupt Switch Interfacing</td><td align="center">18-02-2021</td></tr>
+<tr><td align="center">2</td><td align="center">Speed Control using Phase Correct PWM Mode</td><td align="center">18-02-2021</td></tr>
+<tr><td align="center">3</td><td align="center">ADC Interfacing</td><td align="center">18-02-2021</td></tr>
+<tr><td align="center">4</td><td align="center">Case Study: Adaptive Cruise Control (Embedded C)</td><td align="center">18-02-2021</td></tr>
+<tr><td align="center">5</td><td align="center">Introduction to RTOS</td><td align="center">-</td></tr>
+<tr><td align="center">6</td><td align="center">Case Study: Adaptive Cruise Control (Statecharts)</td><td align="center"></td></tr>
+<tr><td align="center">7</td><td align="center">Case Study: Adaptive Cruise Control (Lustre)</td><td align="center"></td></tr>
+</tbody></table>
+<center><h1><a class="header" href="#installation-guide" id="installation-guide"> Installation Guide</a></h1></center>
+<p>This document contains instructions to install following software/libraries on <strong>Ubuntu OS</strong>:</p>
+<ul>
+<li><strong>SimulIDE 0.4.14</strong></li>
+<li><strong>Eclipse IDE for C/C++ Developers</strong></li>
+<li><strong>CoppeliaSim 4.0.0</strong></li>
+</ul>
+<blockquote>
+<p>The installation of all software/libraries has been tested on <strong>Ubuntu 16.04</strong> and <strong>18.04</strong>. We recommend you to use one of these versions of <strong>Ubuntu OS</strong>. These software have to be installed <strong>ONLY ON 64-bit OS</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Refer the <a href="https://youtu.be/V_LXk6eNUkg" target="_blank">Video</a> for installing Ubuntu on Virtual Machine</p>
+</blockquote>
+<p>After installation, follow the steps in <strong>AVR Building Tool</strong> which will be used to compile and generate hex file from microcontroller code.</p>
+<!-- toc -->
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainbsimulidebdiv" id="div-alignjustify-classmainbsimulidebdiv"> <div align="justify" class="main"><b>SimulIDE:</b></div></a></h3>
+<hr>
+<p><b>Description:</b><div align="justify" class="main"> SimulIDE is a simple real time electronic circuit simulator, to learn and experiment with simple electronic circuits and microcontrollers, supporting PIC, AVR and Arduino. In this course, we will use it for simulating AVR projects.</div></p>
+<p><b>Installation Steps:</b></p>
+<ul>
+<li>Download <strong>SimulIDE Linux Appimage</strong> (<em>version 0.4.14</em>) from <a href="https://www.simulide.com/p/downloads.html" target="_blank">here</a>  <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/SimulIDE_appimage.png"/></center></li>
+</ul>
+<center>Figure: SimulIDE version selection</center>
+<ul>
+<li>
+<p>Open Terminal and navigate to the directory where this file was downloaded. Run the following command:</p>
+<pre><code class="language-bash">chmod +x ./*.AppImage
+</code></pre>
+</li>
+</ul>
+<p>This command will make an Appimage as executable.</p>
+<ul>
+<li>Then double-click the AppImage in the file manager to open SimulIDE.</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/SimulIDE_launch.png"/></center>
+ <center>Figure: SimulIDE software launch</center>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainbeclipsebdiv" id="div-alignjustify-classmainbeclipsebdiv"><div align="justify" class="main"><b>Eclipse:</b></div></a></h3>
+<hr>
+<p><b>Description:</b> Eclipse is an integrated development environment used in computer programming. It contains a base workspace and an extensible plug-in system for customising the environment. We will be using Eclipse for writing our codes. </p>
+<p><b>Installation Steps:</b></p>
+<ul>
+<li>
+<p>Download <strong>Eclipse IDE for C/C++ Developers</strong> for <strong>Ubuntu 64-bit OS</strong> from <a href="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2020-12/R/eclipse-cpp-2020-12-R-linux-gtk-x86_64.tar.gz" target="_blank">here</a> (<em>file size - 358MB</em>). It will download as <strong>.tar.xz</strong> (compressed zip) file.</p>
+</li>
+<li>
+<p>Open Terminal and navigate to the directory where this file was downloaded. Run the following command:</p>
+<pre><code class="language-bash">tar -xf eclipse-cpp-2020-12-R-linux-gtk-x86_64.tar.gz
+</code></pre>
+<p>This command will decompress and extract the Eclipse software to the folder named <strong>eclipse-cpp-2020-12-R-linux-gtk-x86_64</strong> in the same directory.</p>
+</li>
+<li>
+<p>Now type the below commands in sequence to launch CoppeliaSim.</p>
+<pre><code class="language-bash">cd eclipse
+./eclipse
+</code></pre>
+</li>
+<li>
+<p>You will see the output as shown in following figures. Eclipse will open with the default scene loaded.</p>
+</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_cmd_updated.png"/></center>
+<center>Figure: Extract Eclipse and launch it</center>
+ <br/>
+ <div align="justify" class="main">Choose the desired location for workspace or continue with the default directory. On launching Eclipse, welcome screen will appear. After closing it you will see the following screen.</div>
+ <br/>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_IDE.png"></center>
+<center>Figure: Eclipse software launch</center>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainbcoppeliasimbdiv" id="div-alignjustify-classmainbcoppeliasimbdiv"><div align="justify" class="main"><b>CoppeliaSim:</b></div></a></h3>
+<hr>
+<p><b>Description:</b><div align="justify" class="main">  The robot simulator CoppeliaSim is based on a distributed control architecture: each object/model can be individually controlled via an embedded script, a plugin, a ROS or BlueZero node, a remote API client, or a custom solution. This makes CoppeliaSim very versatile and ideal for multi-robot applications. Controllers can be written in C/C++, Python, Java, Lua, Matlab or Octave.</div></p>
+<p><b>Installation Steps:</b></p>
+<ul>
+<li>Download <strong>CoppeliaSim Edu 4.0.0</strong> for <strong>Ubuntu 18.04</strong> (<em>64-bit OS</em>) from <a href="https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_0_0_Ubuntu18_04.tar.xz" target="_blank">here</a> (<em>file size - 152MB</em>). It will download as <strong>.tar.xz</strong> (compressed zip) file.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> To download CoppeliaSim for <strong>Ubuntu 16.04</strong> (<em>64-bit OS</em>), click <a href="https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_0_0_Ubuntu16_04.tar.xz" target="_blank">here</a> (<em>file size - 144MB</em>).</p>
+</blockquote>
+<ul>
+<li>
+<p>Open Terminal and navigate to the directory where this file was downloaded. Run the following command:</p>
+<pre><code class="language-bash">tar -xf CoppeliaSim_Edu_V4_0_0_Ubuntu18_04.tar.xz
+</code></pre>
+<p>This command will decompress and extract the CoppeliaSim software to the folder named <strong>CoppeliaSim_Edu_V4_0_0_Ubuntu18_04</strong> in the same directory.</p>
+</li>
+<li>
+<p>Now type the below commands in sequence to launch CoppeliaSim.</p>
+<pre><code class="language-bash">cd CoppeliaSim_Edu_V4_0_0_Ubuntu18_04
+./coppeliaSim.sh
+</code></pre>
+</li>
+<li>
+<p>You will see the output as shown in following figures. CoppeliaSim will open with the default scene loaded.</p>
+<center><img src="https://raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/task_0/sw_install/ubuntu/12a_Extract_CoppeliaSim_and_launch_it.png"/></center>
+<center>Figure: Extract CoppeliaSim and launch it</center>
+<br/>
+<center><img src="https://raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/task_0/sw_install/windows/13_CoppeliaSim_first_launch.png"></center>
+<center>Figure: CoppeliaSim software launch</center>
+</li>
+</ul>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainbavr-building-toolbdiv" id="div-alignjustify-classmainbavr-building-toolbdiv"><div align="justify" class="main"><b>AVR Building Tool:</b></div></a></h3>
+<hr>
+<b>Description:</b><div align="justify" class="main">  This is user generated executable file. The file will be used to compile and build AVR codes and generate hex file. </div>
+Download  <b><a href="./resources/avr_hex_file_generator" target="_blank">avr_hex_file_generator</a></b> executable file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download.<br>
+Set a $PATH of executable file in environment variable. <br/>
+<br/>
+<b>Follow the steps to set environment variable:</b>
+<ul>
+<li>Open Terminal and navigate to home directory:</li>
+</ul>
+<pre><code class="language-bash"> cd $HOME
+</code></pre>
+<ul>
+<li>Run the following command:</li>
+</ul>
+<pre><code class="language-bash">  sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude
+</code></pre>
+<ul>
+<li>Open the .bashrc file in any editor:</li>
+</ul>
+<pre><code class="language-bash"> sudo nano .bashrc
+</code></pre>
+<ul>
+<li>Add the following line to the file at the end.</li>
+</ul>
+<pre><code class="language-bash"> export PATH=&quot;$HOME/&lt;Path_to_executable_file&gt;:$PATH&quot;
+</code></pre>
+<ul>
+<li>Save the file and exit. Use the source command to force Linux to reload the .bashrc file which normally is read only when you log in each time.</li>
+</ul>
+<pre><code class="language-bash"> source .bashrc
+</code></pre>
+<ul>
+<li>Check that path is correctly added in the environment variable:</li>
+</ul>
+<pre><code class="language-bash"> echo $PATH
+</code></pre>
+<center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#resources" id="resources">Resources</a></h4></center>
+<hr />
+<p>This document consists of links of video tutorials needed to complete the labs. It also consists of few additional modules for deeper understanding. </p>
+<blockquote>
+<p><strong>Note:</strong> All the resources provided below are based on <a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V robot</a> which consists of <a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560</a>  microcontroller. But for the lab sessions, we will be working on <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf" target="_blank">ATmega328</a> controller <a href="https://www.farnell.com/datasheets/1682209.pdf" target="_blank">(Arduino Uno)</a> given that concepts remain same across both the controllers (belong to same family).</p>
+</blockquote>
+<blockquote>
+<p><strong>Reference Code Examples:</strong> <a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a></p>
+</blockquote>
+<p>Additional Module: <a href="https://youtu.be/umw4HdT19Iw" target="_blank">Introduction to Firebird V Robot</a></p>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-1-bar-graph-leds-and-interrupt-switch-interfacingbdiv" id="div-alignjustify-classmainblab-1-bar-graph-leds-and-interrupt-switch-interfacingbdiv"> <div align="justify" class="main"><b>Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</b></div></a></h3>
+<hr>
+<p><strong>Module 1: I/O Interfacing</strong></p>
+<ul>
+<li>Understand the function of I/O ports and the associated registers.</li>
+<li>Interface I/O peripherals like Switch, Buzzer and Bar graph LEDs.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/R-q_tuvaT0c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><strong>Module 2: Masking</strong></p>
+<ul>
+<li>Understand the concept of Masking with the help of I/O interfacing.</li>
+<li>Need of using AND and OR operators with the help of few examples.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/wc_HYmRa0P0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Additional Module: <a href="https://youtu.be/cS25PQrhvwg" target="_blank">LCD Interfacing</a></p>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-2-speed-control-using-8-bit-phase-correct-pwm-modebdiv" id="div-alignjustify-classmainblab-2-speed-control-using-8-bit-phase-correct-pwm-modebdiv"> <div align="justify" class="main"><b>Lab 2: Speed Control using 8 bit Phase Correct PWM Mode</b></div></a></h3>
+<hr>
+**Module 3: Motor Interfacing**
+<ul>
+<li>Direction control of DC motors present on Firebird V Robot.</li>
+<li>Understanding the use of L293D motor driver IC.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/6c2ui-k4zvI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><strong>Module 4: Pulse Width Modulation</strong></p>
+<ul>
+<li>Understanding Timers and associated registers.</li>
+<li>Speed control of the robot and brightness control of the LED.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/FRf34y8CbBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Additional Modules: </p>
+<ul>
+<li><a href="https://youtu.be/rqsa2JqvrWA" target="_blank">Interrupts</a><br></li>
+<li><a href="https://youtu.be/SQIE1Cr7mzk" target="_blank">Position Encoder Interrupt</a></li>
+</ul>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-3-adc-interfacingbdiv" id="div-alignjustify-classmainblab-3-adc-interfacingbdiv"> <div align="justify" class="main"><b>Lab 3: ADC Interfacing</b></div></a></h3>
+<hr>
+<b>Module 5: ADC Interfacing</b>
+<ul>
+<li>Interface white line sensors and Proximity sensor.</li>
+<li>Understand ADC (Analog to Digital conversion) on controller.</li>
+</ul>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/OAAqymUdAb8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Additional Module: <a href="https://youtu.be/RpYZUF-t3hE" target="_blank">Serial Communication</a></p>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainblab-5-real-time-operating-systems-rtosbdiv" id="div-alignjustify-classmainblab-5-real-time-operating-systems-rtosbdiv"> <div align="justify" class="main"><b>Lab 5: Real-Time Operating Systems (RTOS)</b></div></a></h3>
+<hr>
+<p>Following is the link to download the <strong>zip file</strong> of examples on concepts of RTOS implemented using <strong>FreeRTOS API</strong> built with <strong>ESP32</strong> module.</p>
+<p><a href="./resources/lab5_rtos_examples.zip" target="_blank">RTOS Examples on ESP32</a></p>
+<br>
+<hr>
+<h3><a class="header" href="#div-alignjustify-classmainbproject-search-and-rescuebdiv" id="div-alignjustify-classmainbproject-search-and-rescuebdiv"> <div align="justify" class="main"><b>Project: Search and Rescue</b></div></a></h3>
+<hr>
+<a href="./resources/CS684_Project_Task_1.pptx" target="_blank"> Task 1 PPT  </a> - Presented in class of <b><em>22nd March, 2021</em></b>
+<p><strong>Firebird V related Resources:</strong></p>
+<ul>
+<li><a href="https://drive.google.com/drive/folders/1rq7jjGUH8eEKnqjPibdJ_s-Hq79MPeeJ?usp=sharing" target="_blank">Firebird V Hardware and Software Manuals</a></li>
+<li><a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2549-8-bit-avr-microcontroller-atmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ATmega2560 Datasheet</a></li>
+<li><a href="https://drive.google.com/drive/folders/1YKzne0w6EAZLa_FnQipXh5XPVHvK0jjZ" target="_blank">Experiments of Firebird V</a></li>
+<li><a href="https://drive.google.com/drive/u/1/folders/1TPrljaSlRFnT5yZN1Gd8J9wUb6i-_Oh5" target="_blank">Color Sensor Interfacing on Firebird V</a></li>
+<li><a href="https://drive.google.com/drive/u/1/folders/1vac3uNvSwOX17k1qqO0ARTgmKYEigYFd" target="_blank">Serial Communication between Firebird V and ESP 32</a></li>
+</ul>
+<p><strong>Simulation related Resources</strong></p>
+<ul>
+<li><a href="./resources/search_n_rescue_scene.ttt" target="_blank">CoppeliaSim Scene File: search_n_rescue.ttt</a></li>
+<li><a href="./resources/search_n_rescue.zip" target="_blank">Eclipse Project Folder for Task 1</a></li>
+</ul>
+<p><strong>IoT Related Resources</strong></p>
+<ul>
+<li><a href="./resources/MockRPC.zip" target="_blank">Mocking RPC</a></li>
+</ul>
+<br>
+<center><h3><a class="header" href="#cs684-embedded-system-course-1" id="cs684-embedded-system-course-1">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-1-bar-graph-leds-and-interrupt-switch-interfacing" id="lab-1-bar-graph-leds-and-interrupt-switch-interfacing">Lab 1: Bar-graph LEDs and Interrupt Switch Interfacing</a></h4></center>
+<hr />
+<h5><a class="header" href="#learning-resources" id="learning-resources">LEARNING RESOURCES</a></h5>
+<p>This lab requires understanding of I/O interfacing with AVR microcontroller and basic knowledge about Masking. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
+<hr />
+<h4><a class="header" href="#aim" id="aim">AIM</a></h4>
+<p>In this lab, you will interface the Bar-graph LEDs and the Interrupt Switch to ATmega2560. The aim of this lab is to get you familiar with the configuring and interfacing of Input and Output devices.</p>
+<p>Your task is to toggle the status of 2 Bar-graph LEDs depending on whether the Interrupt Switch is pressed or released.</p>
+<p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments.</p>
+<hr />
+<h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
+<ul>
+<li>
+<p>Interrupt Switch :  <strong>PD2</strong></p>
+</li>
+<li>
+<p>Bar-graph LED:</p>
+<ul>
+<li>LED 2   --&gt;   <strong>PB1</strong></li>
+<li>LED 6   --&gt;   <strong>PB5</strong></li>
+<li>LED 8   --&gt;   <strong>PB0</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab1_sw_led.zip" target="_blank">lab1_sw_led</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab1_sw_led</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>toggle_leds_on_sw_press</strong> function to achieve the following:</p>
+<ol>
+<li>Check whether the Interrupt Switch is pressed or not.</li>
+<li>If the Interrupt Switch is pressed, only the <strong>2nd</strong> LED will turn OFF and the <strong>8th</strong> LED will turn ON.</li>
+<li>If the Interrupt Switch is not pressed, the <strong>2nd</strong> LED will remain ON and only <strong>8th</strong> LED will turn OFF.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> While completing, you have to use following functions defined in <b>eBot_MCU_Predef.h</b> header file:</p>
+</blockquote>
+<ol>
+<li>bool interrupt_switch_pressed (void);</li>
+<li>void turn_on_bar_graph_led (unsigned char);</li>
+<li>void turn_off_bar_graph_led (unsigned char);</li>
+</ol>
+<p><strong>Step-3:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to Bar-graph LEDs and Interrupt Switch. Complete the pre-written functions with the help of comments provided.</p>
+<p><strong>Step-4:</strong> In the Package Explorer (left pane), right click on <strong>lab1_sw_led</strong> folder and select <em><strong>Show in Local Terminal --&gt; Terminal</strong></em>(bottom pane). Type the following command in the terminal:</p>
+<pre><code class="language-bash">avr_hex_file_generator -cpp src/lab1_sw_led_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
+</code></pre>
+<p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab1_sw_led_main.hex</strong> file along with other build files.</p>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-1_output.png"></center>
+<p><strong>Step-5:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
+<hr />
+<h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
+<ul>
+<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
+</ul>
+<pre><code class="language-c"> //For Interrupt Switch:
+
+ #define 	interrupt_sw_ddr_reg		DDRD
+ #define 	interrupt_sw_port_reg 		PORTD
+ #define 	interrupt_sw_pin 		2		// PD2
+
+ //For Bar-graph LED:
+ 
+  #define 	bar_graph_led_ddr_reg 		DDRB
+  #define 	bar_graph_led_port_reg 	PORTB
+  #define 	bar_graph_led_2_pin 		1		// PB1
+  #define 	bar_graph_led_8_pin 		0		// PB0
+  #define 	bar_graph_led_6_pin 		5		// PB5
+</code></pre>
+<ul>
+<li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
+</ul>
+<hr />
+<h4><a class="header" href="#simulation-expected-output" id="simulation-expected-output">Simulation: EXPECTED OUTPUT</a></h4>
+<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/JnWsCg0AsYA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><h3><a class="header" href="#cs684-embedded-system-course-2" id="cs684-embedded-system-course-2">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-2-speed-control-using-8-bit-phase-correct-pwm-mode" id="lab-2-speed-control-using-8-bit-phase-correct-pwm-mode">Lab 2: Speed Control using 8 bit Phase Correct PWM Mode</a></h4></center>
+<hr />
+<h5><a class="header" href="#learning-resources-1" id="learning-resources-1">LEARNING RESOURCES</a></h5>
+<p>This lab requires understanding of motor interfacing with AVR microcontroller and basic knowledge about Pulse Width Modulation. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
+<hr />
+<h4><a class="header" href="#aim-1" id="aim-1">AIM</a></h4>
+<p>In this lab, you will increase and decrease the speed of motors using Phase Correct PWM Mode. The aim of this lab is to get you familiar with one of the PWM mode available on the ATmega2560.</p>
+<p>In this lab, you will interface the L293D motor driver and the Timer connected to the ATmega2560.</p>
+<p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments. </p>
+<hr />
+<h4><a class="header" href="#connections-1" id="connections-1">CONNECTIONS</a></h4>
+<ul>
+<li>
+<p>Motors are connected to the Microcontroller through L293D Motor Driver IC.</p>
+<p>Motors Pin	  	Microcontroller Pin </p>
+<ul>
+<li>RB		--&gt; 	<b>PC3</b></li>
+<li>RF		--&gt; 	<b>PC2</b></li>
+<li>LF		--&gt; 	<b>PC1</b></li>
+<li>LB		--&gt; 	<b>PC0</b></li>
+</ul>
+</li>
+<li>
+<p>PWM Pins of the Microcontroller are connected to the L293D Motor Driver IC.</p>
+<p>PWM Pin				Microcontroller Pin </p>
+<ul>
+<li>Left Motor	  --&gt;	<b>PD5</b></li>
+<li>Right Motor	  --&gt;	<b>PD6</b></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4><a class="header" href="#procedure-1" id="procedure-1">PROCEDURE</a></h4>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab2_motor_pwm.zip" target="_blank">lab2_motor_pwm</a></b> zip file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab2_motor_pwm</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>traverse_s_shape</strong> function to achieve the following:</p>
+<ol>
+<li>Move the robot in forward direction.</li>
+<li>In the while loop, set the speed as complement of each other for the left and right motors and increment it by one every ten milliseconds till 255.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> While completing, you have to use following functions defined in <b>eBot_MCU_Predef.h</b> header file:</p>
+</blockquote>
+<ol>
+<li>void forward (void);</li>
+<li>void velocity (unsigned char, unsigned char);</li>
+</ol>
+<p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get build successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
+<pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
+</code></pre>
+<p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
+<ul>
+<li>Download the <b><a href="./resources/eBot.ttm" target="_blank">eBot.ttm</a></b> model. Start CoppeliaSim, click on <em>File --&gt; Load Model</em> and browse for <strong>eBot.ttm</strong> file. This will load the robot model on the scene. (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>In Eclipse, right click on <strong>lab2_motor_pwm</strong> folder (Project Explorer - left pane) and select <em>Run As --&gt; Local C/C++ Application</em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
+</ul>
+<pre><code class="language-pseudocode">Connection Success ... 
+0
+0
+0
+
+ Please Enter Y to Start Simulation:	  Y
+</code></pre>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. You can verify the output by referring to <em>Expected Output - CoppeliaSim</em> video.</p>
+<blockquote>
+<p><strong>Note:</strong> For better angle, you can change the perspective of the scene using page selector. <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/CoppeliaSim_page_selector.png"></center></p>
+</blockquote>
+<p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
+<p><strong>Step-6:</strong> In the Package Explorer (left pane), right click on <strong>lab2_motor_pwm</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
+<pre><code class="language-bash">avr_hex_file_generator -cpp src/lab2_motor_pwm_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
+</code></pre>
+<p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab2_motor_pwm_main.hex</strong> file along with other build files.</p>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclpse_lab-2_output.png"></center>
+<p><strong>Step-7:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
+<hr />
+<h4><a class="header" href="#macros-to-use-1" id="macros-to-use-1">MACROS to use</a></h4>
+<ul>
+<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
+</ul>
+<pre><code class="language-c">
+   // Motor direction registers and pins
+   #define		motors_dir_ddr_reg		DDRC
+   #define		motors_dir_port_reg		PORTC
+   #define 	motors_RB_pin			PC3		// 3
+   #define 	motors_RF_pin			PC2		// 2
+   #define 	motors_LF_pin			PC1		// 1
+   #define 	motors_LB_pin			PC0		// 0
+   
+   // Motor enable registers and pins
+   #define		motors_pwm_ddr_reg		DDRD
+   #define		motors_pwm_port_reg		PORTD
+   #define		motors_pwm_R_pin		PD6		// 6
+   #define		motors_pwm_L_pin		PD5		// 5
+   
+   // Timer / Counter registers
+   #define		TCNTH_reg				TCNT0H	// Timer / Counter 0 High Byte register
+   #define		TCNTL_reg				TCNT0L	// Timer / Counter 0 Low Byte register
+   #define		OCRAL_reg				OCR0AL	// Output Compare Register 0A Low Byte
+   #define		OCRAH_reg				OCR0AH	// Output Compare Register 0A High Byte
+   #define		OCRBL_reg				OCR0BL	// Output Compare Register 0B Low Byte
+   #define		OCRBH_reg				OCR0BH	// Output Compare Register 0B High Byte
+   #define		TCCRA_reg				TCCR0A	// Timer / Counter Control Register 0A
+   #define		TCCRB_reg				TCCR0B	// Timer / Counter Control Register 0B
+   
+   // Bits of compare output mode in the TCCRnA register ( Timer / Counter 'n' Control Register A, where n = 0, 1, 2, 3, 4, 5 )
+   #define		COMA1_bit			COM0A1	// 7 (Compare Output Mode bit 1 for Channel A)
+   #define		COMA0_bit			COM0A0	// 6 (Compare Output Mode bit 0 for Channel A)
+   #define		COMB1_bit			COM0B1	// 5 (Compare Output Mode bit 1 for Channel B)
+   #define		COMB0_bit			COM0B0	// 4 (Compare Output Mode bit 0 for Channel B)
+   
+   // Bits of waveform generation mode in the TCCRnA and TCCRnB register ( Timer / Counter 'n' Control Register A/B, where n = 0, 1, 2, 3, 4, 5 )	
+   #define		WGM0_bit				WGM00	// 0 (Waveform Generation Mode bit 0)
+   #define		WGM1_bit				WGM01	// 1 (Waveform Generation Mode bit 1)
+   #define		WGM2_bit				WGM02	// 2 (Waveform Generation Mode bit 2)
+   #define		WGM3_bit				WGM03	// 3 (Waveform Generation Mode bit 3)
+   
+   // Bits of clock select mode in the TCCRnB register ( Timer / Counter 'n' Control Register B, where n = 0, 1, 2, 3, 4, 5 )
+   #define		CS0_bit					CS00	// 0 (Clock Select bit 0)
+   #define		CS1_bit					CS01	// 1 (Clock Select bit 1)
+   #define		CS2_bit					CS02	// 2 (Clock Select bit 2)
+   
+</code></pre>
+<ul>
+<li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
+</ul>
+<hr />
+<h4><a class="header" href="#expected-output---coppeliasim" id="expected-output---coppeliasim">EXPECTED OUTPUT - CoppeliaSim</a></h4>
+<p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/txrcqvKHMcE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+<h4><a class="header" href="#expected-output---simulide" id="expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
+<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/MdY53wVycGw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><h3><a class="header" href="#cs684-embedded-system-course-3" id="cs684-embedded-system-course-3">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-3-adc-interfacing" id="lab-3-adc-interfacing">Lab 3: ADC Interfacing</a></h4></center>
+<hr />
+<h5><a class="header" href="#learning-resources-2" id="learning-resources-2">LEARNING RESOURCES</a></h5>
+<p>This lab requires understanding of sensors interfacing with AVR microcontroller and basic knowledge about Analog to Digital Conversion. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
+<hr />
+<h4><a class="header" href="#aim-2" id="aim-2">AIM</a></h4>
+<p>In this lab, you will interface ADC with the micro-controller. The aim of this lab is to get you familiar with ADC present on ATmega2560.</p>
+<p>In this lab, you will interface the White Line and IR Proximity sensors. Your task is to get the <strong>8-bit</strong> ADC result from the <strong>three white line</strong> sensors and <strong>5th IR proximity</strong> sensor in Single Conversion Mode and display the ADC converted digital values on UART Serial Terminal.</p>
+<p>The program is provided as <strong>Eclipse</strong> project.  But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments. </p>
+<hr />
+<h4><a class="header" href="#connections-2" id="connections-2">CONNECTIONS</a></h4>
+<ul>
+<li>Left White Line Sensor 	    : <strong>PC1 [ ADC Channel 1 ]</strong></li>
+<li>Center White Line Sensor    : <strong>PC0 [ ADC Channel 0 ]</strong></li>
+<li>Right White Line Sensor       : <strong>PC2 [ ADC Channel 2 ]</strong></li>
+<li>5th IR Proximity Sensor        : <strong>PC5 [ ADC Channel 5 ]</strong></li>
+</ul>
+<hr />
+<h4><a class="header" href="#procedure-2" id="procedure-2">PROCEDURE</a></h4>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab3_adc.zip" target="_blank">lab3_adc</a></b> zip file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab3_adc</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>send_sensor_data</strong> function to achieve the following:</p>
+<p>Read data from 3 white line sensors and IR proximity sensor. Print IR proximity sesnor data on the terminal.</p>
+<blockquote>
+<p><strong>Note:</strong> While completing, you have to use following functions defined in <b>eBot_MCU_Predef.h</b> header file:</p>
+</blockquote>
+<ol>
+<li>unsigned char convert_analog_channel_data( unsigned char sensor_channel_number );</li>
+<li>int print_ir_prox_5_data(unsigned char);</li>
+</ol>
+<p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get build successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
+<pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
+</code></pre>
+<p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
+<ul>
+<li>Download the <b><a href="./resources/lab3_adc.ttt" target="_blank">lab3_adc.ttt</a></b> scene. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab3_adc.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>In Eclipse, right click on <strong>lab3_adc</strong> folder (Project Explorer - left pane) and select <em>Run As --&gt; Local C/C++ Application</em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
+</ul>
+<pre><code class="language-pseudocode">Connection Success ... 
+0
+0
+0
+
+ Please Enter Y to Start Simulation:	  Y
+</code></pre>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim and following message will be displayed on the console:</p>
+<pre><code class="language-pseudocode">Simulation started correctly.
+Initialized all sensors in the current CoppeliaSim scene.
+Enter 'Y' / 'y' to take the next sensor reading or 'Q' / 'q' to quit: y
+</code></pre>
+<p>You can check the reading of IR proximity sensor by entering 'Y' / 'y'. Change the position of the robot (in CoppeliaSim) and observe the readings (in Eclipse). </p>
+<blockquote>
+<p><strong>Note:</strong> To change the position of the robot (in CoppeliaSim) click on <em>object/item shift</em> and enter X and Y co-ordinates in position tab. <br>
+To change the orientation of the robot, click on <em>object/item rotate</em> and enter alpha, beta and gamma values in orientation tab. (Refer EXPECTED OUTPUT - CoppeliaSim video)</p>
+</blockquote>
+<ul>
+<li>Verify the readings for following position and orientation:</li>
+</ul>
+<pre><code class="language-c">pos(X,Y) - (0.2020, 0.2000),   ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; reading(127)
+pos(X,Y) - (0.2020, -0.2000),  ori(Alpha, Beta, Gamma) - (0, 0, -90) --&gt; reading(127)
+pos(X,Y) - (0.6060, -0.2000),  ori(Alpha, Beta, Gamma) - (0, 0, 0)   --&gt; reading(70)
+pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; reading(73)
+</code></pre>
+<p><strong>Step-5:</strong> You will notice some pre-written function stubs in <strong>src/eBot_MCU_Predef.c</strong> included for your assistance related to motor and timer. Complete the pre-written functions with the help of comments provided.</p>
+<p><strong>Step-6:</strong> In the Package Explorer (left pane), right click on <strong>lab3_adc</strong> folder and select <em>Show in Local Terminal --&gt; Terminal</em> (bottom pane). Type the following command in the terminal:</p>
+<pre><code class="language-bash">avr_hex_file_generator -cpp src/lab3_adc_main -dcpp src/eBot_Sandbox -dc src/eBot_MCU_Predef -m atmega328p
+</code></pre>
+<p>If there are no errors present in your program, the project will get compiled correctly and you will get the  message as shown below, Also, <strong>build</strong> folder will be generated in project directory that will contain <strong>lab3_adc_main.hex</strong> file along with other build files.</p>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-3_output.png"></center>
+<p><strong>Step-7:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
+<hr />
+<h4><a class="header" href="#macros-to-use-2" id="macros-to-use-2">MACROS to use</a></h4>
+<ul>
+<li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
+</ul>
+<pre><code class="language-c">   // For 3 White Line Sensors
+   #define 	wl_sensors_ddr_reg			    DDRC
+   #define 	wl_sensors_port_reg 			PORTC
+   #define 	left_wl_sensor_pin 			1	// PC1
+   #define 	left_wl_sensor_channel 		1	// ADC1 - ADC Channel 1
+   #define 	center_wl_sensor_pin 			0	// PC0
+   #define 	center_wl_sensor_channel 		0	// ADC0 - ADC Channel 0
+   #define 	right_wl_sensor_pin 			2	// PC2
+   #define 	right_wl_sensor_channel 		2	// ADC2 - ADC Channel 2
+   
+   // For 5th IR proximity Sensor
+   #define 	ir_prox_5_sensor_ddr_reg		DDRC
+   #define 	ir_prox_5_sensor_port_reg 		PORTC
+   #define 	ir_prox_5_sensor_pin 			5	// PC5
+   #define 	ir_prox_5_sensor_channel 		5	// ADC5 - ADC Channel 5
+   
+</code></pre>
+<ul>
+<li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
+</ul>
+<hr />
+<h4><a class="header" href="#expected-output---coppeliasim-1" id="expected-output---coppeliasim-1">EXPECTED OUTPUT - CoppeliaSim</a></h4>
+<p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/KibX8tNKv4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h4><a class="header" href="#expected-output---simulide-1" id="expected-output---simulide-1">EXPECTED OUTPUT - SimulIDE</a></h4>
+<p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/MkdOMZZwaOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><h3><a class="header" href="#cs684-embedded-system-course-4" id="cs684-embedded-system-course-4">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-4-case-study---adaptive-cruise-control-embedded-c" id="lab-4-case-study---adaptive-cruise-control-embedded-c">Lab 4: Case Study - Adaptive Cruise Control (Embedded C)</a></h4></center>
+<hr />
+<h4><a class="header" href="#aim-3" id="aim-3">AIM</a></h4>
+<p>In this task, you will learn the concept of line following algorithm.</p>
+<ul>
+<li>The arena provided to you is made up of curved, zig-zag, and straight paths with a START and GOAL position for the robot as shown in following figure.</li>
+<li>Arena also consists of obstacles randomly placed.</li>
+<li>You have to program the robot which will begin from START position, follow the path avoiding obstacles and stop at the GOAL position.</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-4_arena.png"></center>
+<p>The program is provided as <strong>Eclipse</strong> project. But, the program contains few incomplete functions which you would have to complete to achive the aim.</p>
+<hr />
+<h4><a class="header" href="#procedure-3" id="procedure-3">PROCEDURE</a></h4>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab4_line_follower_robot.zip" target="_blank">lab4_line_follower_robot</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab4_line_follower_robot</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>traverse_line_to_goal</strong> function to achieve the following:</p>
+<ol>
+<li>Robot starts from START position.</li>
+<li>Follows the line and checks for obstacles.</li>
+<li>If obstacle is found on a path, avoids it and plans the next shortest path.</li>
+<li>Stops at GOAL position.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> While completing, you have to use the functions defined in <b>eBot_Sim_Predef.h</b> header file. In <strong>src/eBot_Sandbox.cpp</strong> file, along with <strong>traverse_line_to_goal</strong> function, some other helper functions are provided. You can complete and use those functions or create your won set of helper functions.</p>
+</blockquote>
+<p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get build successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
+<pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
+</code></pre>
+<p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
+<ul>
+<li>Download the <b><a href="./resources/lab4_line_follower_robot.ttt" target="_blank">lab4_line_follower_robot.ttt</a></b> scene. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab4_line_follower_robot.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>In Eclipse, right click on <strong>lab4_line_follower_robot</strong> folder (Project Explorer - left pane) and select <em>Run As --&gt; Local C/C++ Application</em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
+</ul>
+<pre><code class="language-pseudocode">Connection Success ... 
+0
+0
+0
+
+ Please Enter Y to Start Simulation:	  Y
+</code></pre>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. </p>
+<hr />
+<h4><a class="header" href="#simulation-expected-output-1" id="simulation-expected-output-1">Simulation: EXPECTED OUTPUT</a></h4>
+<p>​<strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/z6t9dQiCoLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<blockquote>
+<p><strong>Note:</strong> Do not hardcode the path in program. Your code should be generic and it should work for any obstacle positions. During evaluation, your code will be tested for different scene - in which arena will be same but obstacles will be placed at different positions.</p>
+</blockquote>
+<p>Following rules will be followed for obstacle placement:</p>
+<ul>
+<li>No obstacle will be placed on curved or zig-zag path.</li>
+<li>Obstacle will always be placed on a line and between two nodes.</li>
+<li>Only three colored (red, green and blue) obstacles will be used. </li>
+<li>Any number of obstacles can be present on the arena.</li>
+</ul>
+<center><h3>All the best!</center>
+<center><h3><a class="header" href="#cs684-embedded-system-course-5" id="cs684-embedded-system-course-5">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-6-case-study---adaptive-cruise-control-lustreheptagon" id="lab-6-case-study---adaptive-cruise-control-lustreheptagon">Lab 6: Case Study - Adaptive Cruise Control (Lustre/Heptagon)</a></h4></center>
+<hr></hr>
+<h4><a class="header" href="#solution" id="solution">Solution</a></h4>
+<p>Solution code for this task is available <a href="./resources/lab6_solution.zip" target="_blank">here</a>. </p>
+<p>Use <strong>integrate.sh</strong> from heptagon directory to compile and copy the reactive kernel code into project folder.</p>
+<h4><a class="header" href="#additional-tips" id="additional-tips">Additional Tips</a></h4>
+<ol>
+<li>Automatons are great and an exclusive feature. Use them whenever you should. Common scenarios are, you need a <strong>while like</strong> behaviour, you have a big if else ladder conditioned on multiple variables (compare <strong>move</strong> and <strong>moveAut</strong> in the solution) and nested states/multiple modes. </li>
+<li><a href="https://gitlab.inria.fr/synchrone/heptagon">Heptagon examples</a> on how to integrate external C code with heptagon. </li>
+</ol>
+<hr></hr>
+<h4><a class="header" href="#aim-4" id="aim-4">AIM</a></h4>
+<p>In this task, you will learn to implement <strong>Adaptive Cruise Control</strong> using Synchronous Dataflow programming language <strong>Heptagon</strong>.</p>
+<ul>
+<li>The arena provided to you is made up of curved, zig-zag, and straight paths with a START and GOAL position for the robot as shown in following figure.</li>
+<li>Arena also consists of obstacles randomly placed.</li>
+<li>You have to program the robot which will begin from START position, follow the path avoiding obstacles and stop at the GOAL position.</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-4_arena.png"></center>
+<p>The project folder can be imported as <strong>Eclipse</strong> or <strong>CMake</strong> project. </p>
+<hr />
+<h4><a class="header" href="#procedure-4" id="procedure-4">PROCEDURE</a></h4>
+<p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab6_line_follower_robot.zip" target="_blank">lab6_line_follower_robot</a></b> zip folder. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File &gt; Open Projects From File System &gt; Directory</em> and browse for <strong>lab6_line_follower_robot</strong> folder to open the project.</p>
+<p><strong>Step-2:</strong> In <strong>src/supervisor.cpp</strong>, <strong>traverse_line_to_goal</strong> function performs the sense, step and actuate in a loop. You have to complete Heptagon program inside <strong>heptagon directory</strong> which when compiled gives you a reactive kernel implementing the step part. Your Heptagon program implement the following:</p>
+<ol>
+<li>Robot starts from START position.</li>
+<li>Follows the line and checks for obstacles.</li>
+<li>If obstacle is found on a path, avoids it and plans the next shortest path.</li>
+<li>Stops at GOAL position.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> You can write parts of the program in C/C++ if you must. While completing, you have to use the functions defined in <b>eBot_Sim_Predef.h</b> header file. </p>
+<p>There is an <strong>integrate.sh</strong> file in heptagon directory which you can run each time you change heptagon code to integrate it in the C/C++ project. </p>
+</blockquote>
+<p><strong>Step-3:</strong> Build the project (click on <em>Project --&gt; Build Project</em>). If there are no errors present in your program, the project will get built successfully and you will get the message (<em>on console at bottom pane</em>) as shown below, </p>
+<pre><code class="language-pseudocode">**======== Build Finished. 0 errors, 0 warnings  ========**
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> The default path to Heptagon C headers is <strong>/usr/local/lib/heptagon/c/</strong>. If you get build errors please include path in Eclipse, specific to your installation.</p>
+</blockquote>
+<p><strong>Step-4:</strong> Check the behaviour of the robot on CoppeliaSim. </p>
+<ul>
+<li>Use the <strong>lab6_line_follower_robot.ttt</strong> scene <strong>found in the project folder</strong>. Start CoppeliaSim, click on <em>File --&gt; Open Scene</em> and browse for <strong>lab6_line_follower_robot.ttt</strong> file to open the scene (shown in <em>Expected Output - CoppeliaSim</em> video). </li>
+<li>In Eclipse, right click on <strong>lab6_line_follower_robot</strong> folder (Project Explorer - left pane) and select <em><strong>Run As --&gt; Local C/C++ Application</strong></em>. If no errors are encountered, following message will be displayed onto the console (bottom pane):</li>
+</ul>
+<pre><code class="language-pseudocode">Connection Success ... 
+0
+0
+0
+
+ Please Enter Y to Start Simulation:	  Y
+</code></pre>
+<p>Enter 'Y' on console. This will start the simulation in CoppeliaSim. </p>
+<hr />
+<h4><a class="header" href="#simulation-expected-output-2" id="simulation-expected-output-2">Simulation: EXPECTED OUTPUT</a></h4>
+<p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you)</p>
+<iframe width="710" height="315" src="https://www.youtube.com/embed/z6t9dQiCoLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<blockquote>
+<p><strong>Note:</strong> Do not hardcode the path in program. Your code should be generic and it should work for any obstacle positions. During evaluation, your code will be tested for different scene - in which arena will be same but obstacles will be placed at different positions.</p>
+</blockquote>
+<p>Following rules will be followed for obstacle placement:</p>
+<ul>
+<li>
+<p>No obstacle will be placed on curved or zig-zag path.</p>
+</li>
+<li>
+<p>Obstacle will always be placed on a line and between two nodes.</p>
+</li>
+<li>
+<p>Only three colored (red, green and blue) obstacles will be used. </p>
+</li>
+<li>
+<p>Any number of obstacles can be present on the arena.</p>
+</li>
+</ul>
+<center><h3>All the best!</center>
+<center>
+    <h1><a class="header" href="#rulebook---search-and-rescue" id="rulebook---search-and-rescue">Rulebook - Search and Rescue</a></h1>
+    <h2><a class="header" href="#cs684-embedded-system-course-6" id="cs684-embedded-system-course-6">CS684: Embedded System Course</a></h2>
+</center>
+</br>
+<hr />
+<h2><a class="header" href="#contents" id="contents">Contents</a></h2>
+<p>​	[1] <a href="rulebook/./theme_description.html">Theme Description</a></p>
+<p>​	[2] <a href="rulebook/./arena.html">Arena</a></p>
+<p>​	[3] <a href="rulebook/./sw_specifications.html">HW/SW Specifications</a></p>
+<p>​	[4] <a href="rulebook/./theme_rules.html">Theme Rules</a></p>
+<p>​	[5] <a href="rulebook/./judging_and_scoring_system.html">Judging and Scoring System</a></p>
+<br>
+<hr />
+<center><h2><a class="header" href="#cs684-embedded-system-course-7" id="cs684-embedded-system-course-7">CS684: Embedded System Course</a></h2></center>
+<center><h3><a class="header" href="#rulebook-1-theme-description" id="rulebook-1-theme-description">Rulebook: [1] Theme Description</a></h3></center>
+<hr />
+<br/>
+<!-- toc -->
+<hr />
+<ul>
+<li>
+<p>Figure 1 shows the arena design for this theme.</p>
+</li>
+<li>
+<p>The arena is an abstraction of a disaster-affected area made up of a grid with the <strong>START</strong> position marked.</p>
+</li>
+<li>
+<p>The grid is made up of <strong>16 squares</strong> called <strong>Plots</strong>.</p>
+<br>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Arena.png"></center>
+<center>Figure 1: Arena design</center>
+</li>
+</ul>
+<br>
+<hr />
+<h2><a class="header" href="#1-arena-components" id="1-arena-components">1. Arena Components</a></h2>
+<ul>
+<li>Each Plot has the following terms associated with it:
+<ul>
+<li><strong>Four Mid-Point Markers</strong> on every path around the Plot. Figure 2a highlights the Mid-Point markers for a Plot.</li>
+<li>The <strong>Clearing Zone</strong>, which is shown by the dotted square of <strong>26cm x 26cm</strong>, highlighted in the green box in Figure 2b.</li>
+<li>A <strong>6cm x 6cm</strong> <strong>Inner Square</strong> that is highlighted in Figure 2c.</li>
+<li><strong>Four Nodes</strong> present at the corners of every Plot. This is shown in Figure 2d.</li>
+</ul>
+</li>
+</ul>
+<br>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Terms_with_Arena.png"></center>
+<center>Figure 2: Terms associated with Arena</center>
+<br>
+<ul>
+<li>Rectangular chart paper patches are used to represent <strong>injured survirors</strong> and <strong>debris</strong>.</li>
+<li>Three colored patches:
+<ul>
+<li><span style="color:red;"><strong>Red</strong></span> - represent <strong>Survivors with Severe Injuries</strong>, those require <strong>urgent assistance</strong></li>
+<li><span style="color:green;"><strong>Green</strong></span> - represent <strong>Survivors with Minor Injuries</strong>, those require <strong>not so urgent assistance</strong></li>
+<li><strong>White</strong> - represent pieces of <strong>Debris</strong> strewn on the roads which cannot be moved, thus causing a roadblock</li>
+</ul>
+</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Chart_paper_example.png"></center>
+<center>Figure 3: Injured Survivors and Debris on Arena</center>
+<br>
+<hr />
+<h2><a class="header" href="#2-theme-run-sequence" id="2-theme-run-sequence">2. Theme Run Sequence</a></h2>
+<ul>
+<li>
+<p>The robot will start from the <strong>START</strong> position of the arena.</p>
+</li>
+<li>
+<p>It must traverse around the arena avoiding debris and check for the presence of a Survivors in each plot.</p>
+</li>
+<li>
+<p>If Survivor is present in the plot, robot detects the type of emergency (Minor or Severe) using color.</p>
+<ul>
+<li>Communicates the presence and type of Survivor to Desktop/Laptop.</li>
+</ul>
+</li>
+<li>
+<p>During scanning, robot will get requests from the server on regular interval of 45 seconds.</p>
+<ul>
+<li>Robot satisfies the requirement by traversing to the appropriate plot and ringing a buzzer for 1 second.
+<strong>Note:</strong> This indication can be done only from one of the Mid-Point Markers associated with that Plot. </li>
+</ul>
+</li>
+<li>
+<p>Once robot scans entire grid, it should stop at medical camp to mark an end of the run.</p>
+<!-- - Robot can decide to satisfy the requirement or ignore it.
+ 
+ - Robot can receive one or multiple requests at one time. 
+ - There can be two types of requests as given below or can be empty.
+   - Fetch RED Survivor in 10s
+   - Identify Survivor at plot 4 in 20s  
+   - No Request -->
+</li>
+</ul>
+<br>
+<hr />
+<h2><a class="header" href="#3-communication-sequence" id="3-communication-sequence">3. Communication Sequence</a></h2>
+<ul>
+<li>Robot (Firebird V) will communicate with ESP 32 module over UART using serial communication.</li>
+<li>ESP32 will use Bluetooth Low Energy (BLE) to communicate with the internet-connected laptop. Note that ESP32 won't be connected to the Wifi and hence the internet.</li>
+<li>Laptop will communicate with the Thingsboard server.</li>
+</ul>
+<h2><a class="header" href="#4-theme-requirements" id="4-theme-requirements">4. Theme Requirements</a></h2>
+<p>Input Operations</p>
+<ul>
+<li>Thingsboard server will send RPC requests to the laptop on a regular interval of <strong>45 seconds</strong>. We will provide you with a script to mock this behaviour in development.</li>
+<li>Laptop receives the RPC requests using MQTT Protocol in JSON format.</li>
+<li>The requests may contain single or multiple requests (actions to perform). Robot can decide to satisfy the requests or ignore them.</li>
+<li>There can be different types of requests as given below:
+<ul>
+<li>Fetch RED Survivor in 10s:
+Robot has to travesrse to the nearest RED Survivor plot and ring the buzzer within 10 second to satisfy the requirement.</li>
+<li>Identify Survivor at plot 4 in 20s: Robot has to traverse to plot 4, identify the Survior and ring the Buzzer within 20 seconds. </li>
+<li>No Request: No action needs to be performed</li>
+</ul>
+</li>
+</ul>
+<p>Output Operations</p>
+<ul>
+<li>Once a request is performed by the robot, the response should be sent by  the robot to the laptop over BLE and from laptop to the Thingsboard server. (The exact request formats will be added shortly)</li>
+<li>The protocol to use while sending the data back to Thingsboard server will be CoAP.</li>
+<li>Teams should prepare an interface (desktop app or web app) to show the requests received, indicate operations being performed on the arena and result of the operations. This is an open ended task so use your creativity.</li>
+</ul>
+<br>
+<hr />
+<center><h2><a class="header" href="#cs684-embedded-system-course-8" id="cs684-embedded-system-course-8">CS684: Embedded System Course</a></h2></center>
+<center><h3><a class="header" href="#rulebook-2-arena" id="rulebook-2-arena">Rulebook: [2] Arena</a></h3></center>
+<br/>
+<!-- toc -->
+<hr />
+<h2><a class="header" href="#1-arena-configuration" id="1-arena-configuration">1. Arena Configuration</a></h2>
+<ul>
+<li>For ease of reference:
+<ul>
+<li>The Plots in the arena are numbered from <strong>1</strong> to <strong>16</strong> as illustrated in red in Figure 1a.</li>
+<li>The Nodes in the arena are number from <strong>1</strong> through <strong>25</strong> as illustrated in Figure 1b.</li>
+</ul>
+</li>
+</ul>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Arena_configuration.png"></center>
+  <center>Figure 1: Arena design</center>
+<br>
+<hr />
+<h2><a class="header" href="#2-preparing-the-debris-and-injured-survivors" id="2-preparing-the-debris-and-injured-survivors">2. Preparing the Debris and Injured Survivors</a></h2>
+<ul>
+<li>
+<p>Material required:</p>
+<ul>
+<li>Red, Green and White color chart paper</li>
+</ul>
+</li>
+<li>
+<p>Preparing Debris and Injured Survivors:</p>
+<ul>
+<li>
+<p>Teams will prepare three kinds of chart paper patches. Characteristics of these are given in Table 1.</p>
+<table><thead><tr><th align="center">Type of Patch</th><th align="center">Length (cm)</th><th align="center">Width (cm)</th><th align="center">Color</th><th align="center">Count</th></tr></thead><tbody>
+<tr><td align="center">Debris</td><td align="center">40</td><td align="center">6</td><td align="center"><strong>White</strong></td><td align="center">10</td></tr>
+<tr><td align="center">Survivors with Major Injuries</td><td align="center">26</td><td align="center">26</td><td align="center"><span style="color:red;"><strong>Red</strong></span></td><td align="center">10</td></tr>
+<tr><td align="center">Survivors with Minor Injuries</td><td align="center">26</td><td align="center">26</td><td align="center"><span style="color:green;"><strong>Green</strong></span></td><td align="center">10</td></tr>
+</tbody></table>
+<p>Table 1: Characteristics of Debris and Injured Survivors</p>
+</li>
+</ul>
+</li>
+<li>
+<p>After preparing these patches, teams must paste them on the arena according to the final arena setup given below.</p>
+</li>
+</ul>
+<br>
+<hr />
+<h2><a class="header" href="#3-placing-the-debris-and-injured-survivors-on-arena" id="3-placing-the-debris-and-injured-survivors-on-arena">3. Placing the Debris and Injured Survivors on Arena</a></h2>
+<ul>
+<li>
+<p>Placement of Debris:</p>
+<ul>
+<li>White patches of size 40cm x 6cm are used to indicate the Debris.</li>
+<li>These patches need to be sticked on the Path between two nodes and covering Mid-point Marker.</li>
+</ul>
+</li>
+<li>
+<p>Placement of Injured Survivors:</p>
+<ul>
+<li>Green and Red patches of size 26cm x 26cm are used to indicate minor and severly injured survivors.</li>
+<li>These colored patches need to be sticked in the clearing zone.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> You must use transparent sellotape to stick these patches.</p>
+<br>
+<hr />
+<h2><a class="header" href="#4-final-arena-setup" id="4-final-arena-setup">4. Final Arena Setup</a></h2>
+<center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Arena_with_chart_paper.png"></center>
+  <center>Figure 2: Arena Final Setup</center>
+<p><strong>Note:</strong> The position of Debris and Survivors is random. During final demonstration, position will be different. Your algorithm should be generic.</p>
+<br>
+<hr />
+<center><h2><a class="header" href="#cs684-embedded-system-course-9" id="cs684-embedded-system-course-9">CS684: Embedded System Course</a></h2></center>
+<center><h3><a class="header" href="#rulebook-3-hardware-and-software-specifications" id="rulebook-3-hardware-and-software-specifications">Rulebook: [3] Hardware and Software Specifications</a></h3></center>
+<br/>
+<!-- toc -->
+<hr />
+<h2><a class="header" href="#1-hardware-specifications" id="1-hardware-specifications">1. Hardware Specifications</a></h2>
+<ul>
+<li>
+<p><strong>Use of Firebird V and ESP32:</strong></p>
+<ul>
+<li>All teams must use Firebird V robot and ESP32 development board provided by e-Yantra.</li>
+<li>Team shall not dismantle the robot.</li>
+<li>The robot should be completely autonomous. The team is not allowed to use any wireless remote or any other devices such as a camera while the robot is performing the task. The robot are only allowed to communicate using the Wireless Protocol mentioned.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use of additional components:</strong></p>
+<ul>
+<li>Firebird V and ESP32 communicate using UART. No other microcontroller-based board shall be attached to the Firebird V robot except ESP32.</li>
+<li>Teams are not allowed to connect external actuators or structural hardware to the Firebird V robot.</li>
+<li>Teams are not allowed to use any additional sensor apart from ones provided with the Robot.</li>
+</ul>
+</li>
+<li>
+<p><strong>Power Supply:</strong></p>
+<ul>
+<li>The robot can be charged through battery or auxiliary power supply. </li>
+<li>The team cannot use any other power source for powering the robot.</li>
+<li>The team can use auxiliary power during practice but the final demonstration should only be made using only battery powered robot.</li>
+</ul>
+</li>
+</ul>
+<br>
+<hr />
+<h2><a class="header" href="#2-software-specifications" id="2-software-specifications">2. Software Specifications</a></h2>
+<ul>
+<li>Teams can use Eclipse, for writting code for AVR microcontroller. Teams are free to use any other open source Integrated Development Environment (IDE) for programming AVR microcontroller.</li>
+<li>Use of any non-open source libraries is not allowed and will result in disqualification.</li>
+<li>Teams can use any language and open source libraries for creating an interface (desktop app or web app).</li>
+</ul>
+<br>
+<hr />
+<center><h2><a class="header" href="#cs684-embedded-system-course-10" id="cs684-embedded-system-course-10">CS684: Embedded System Course</a></h2></center>
+<center><h3><a class="header" href="#rulebook-4-theme-rules" id="rulebook-4-theme-rules">Rulebook: [4] Theme Rules</a></h3></center>
+<br/>
+<!-- toc -->
+<hr />
+<h2><a class="header" href="#final-run" id="final-run">Final Run</a></h2>
+<ul>
+<li>The maximum time allotted to complete the task is 10 minutes.</li>
+<li>A maximum of two repositions (explained below) is allowed for each team.</li>
+<li>Once the robot is switched on, human intervention is NOT allowed.</li>
+<li>Robot is not allowed to traverse through the Plot, it always has to follow the black line
+for traversal. </li>
+<li>For the final demonstration, the Arena Configuration will NOT be given to any of the teams.The robot must navigate through a randomly setup arena and autonomously detect the White Debris, identify the Survivors without any prior knowledge of the arena configuration. <br />
+<strong>Note:</strong> You MUST have a generic solution that
+can handle any setup, in real-time.</li>
+<li>Any of the 16 Plots may contain survivor.</li>
+<li>Debris may be placed on path of any of the Plots such that every Plot in the arena will have at least one path for the robot to reach to the Survivor.</li>
+<li>A run ends and the timer is stopped when:
+<ul>
+<li>The Robot stops at medical camp or</li>
+<li>If the maximum time limit for completing the task is reached or</li>
+<li>If the team needs repositioning but has used all repositioning options.
+<br></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#repositioning-the-robot" id="repositioning-the-robot">Repositioning the Robot</a></h2>
+<p>Suppose while traversing the arena, the robot strays off the black line, team member can place the robot on the previous node (node already traversed by the robot)
+by dragging (not lifting) the robot back to the line in such a way that both the wheels of robot are parallel to the node and castor wheel is on the black line. This is termed as a Reposition.
+Note that the timer used for measuring the task completion time in the competition will be continuously running during a Reposition and robot will not be switched off.</p>
+<br>
+<hr />
+<center><h2><a class="header" href="#cs684-embedded-system-course-11" id="cs684-embedded-system-course-11">CS684: Embedded System Course</a></h2></center>
+<center><h3><a class="header" href="#rulebook-5-judging-and-scoring-system" id="rulebook-5-judging-and-scoring-system">Rulebook: [5] Judging and Scoring System</a></h3></center>
+<br/>
+<!-- toc -->
+<hr />
+<p>$$ Score = (600 - T) + (30 * CDS) + (\sum_{i=1}^{n} (GT_i - TT_i)) * 25  + (10 * NR) + AB - (P * 30)$$</p>
+<br>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><em>T</em> : Time taken by robot to complete the Task</p>
+</li>
+<li>
+<p><em>CDS</em> : Number of Survivors detected correctly</p>
+</li>
+<li>
+<p>GT<sub>i</sub> : Given time for the ith request</p>
+</li>
+<li>
+<p>TT<sub>i</sub> : Time taken by robot to complete the ith request</p>
+</li>
+<li>
+<p><em>NR</em> : Number of requests satisfied by the robot </p>
+</li>
+<li>
+<p><em>AB</em> : Bonus of 100 is provided based on the creativity shown in designing desktop/web app</p>
+</li>
+<li>
+<p><em>P</em> : Penalty is incurred each time robot dashes against Debris and for each Reposition.
+<br></p>
+</li>
+</ul>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

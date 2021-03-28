@@ -17,16 +17,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
@@ -96,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item "><a href="Installation_instructions.html">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item expanded "><a href="CS684_Lab-3.html" class="active">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-6.html">Lab 6</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +127,9 @@
                     <h1 class="menu-title">CS684 Spring 2021</h1>
 
                     <div class="right-buttons">
-                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
                         
                     </div>
                 </div>
@@ -160,18 +158,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center><h3 id="cs684-embedded-system-course"><a class="header" href="#cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
-<center><h4 id="lab-3-adc-interfacing"><a class="header" href="#lab-3-adc-interfacing">Lab 3: ADC Interfacing</a></h4></center>
+                        <center><h3><a class="header" href="#cs684-embedded-system-course" id="cs684-embedded-system-course">CS684: Embedded System Course</a></h3></center>
+<center><h4><a class="header" href="#lab-3-adc-interfacing" id="lab-3-adc-interfacing">Lab 3: ADC Interfacing</a></h4></center>
 <hr />
-<h5 id="learning-resources"><a class="header" href="#learning-resources">LEARNING RESOURCES</a></h5>
+<h5><a class="header" href="#learning-resources" id="learning-resources">LEARNING RESOURCES</a></h5>
 <p>This lab requires understanding of sensors interfacing with AVR microcontroller and basic knowledge about Analog to Digital Conversion. Refer the <strong><a href="./Resources.html">Resources</a></strong> file.</p>
 <hr />
-<h4 id="aim"><a class="header" href="#aim">AIM</a></h4>
+<h4><a class="header" href="#aim" id="aim">AIM</a></h4>
 <p>In this lab, you will interface ADC with the micro-controller. The aim of this lab is to get you familiar with ADC present on ATmega2560.</p>
 <p>In this lab, you will interface the White Line and IR Proximity sensors. Your task is to get the <strong>8-bit</strong> ADC result from the <strong>three white line</strong> sensors and <strong>5th IR proximity</strong> sensor in Single Conversion Mode and display the ADC converted digital values on UART Serial Terminal.</p>
 <p>The program is provided as <strong>Eclipse</strong> project.  But, the program contains few incomplete functions which you would have to complete as per the instructions present in the comments. </p>
 <hr />
-<h4 id="connections"><a class="header" href="#connections">CONNECTIONS</a></h4>
+<h4><a class="header" href="#connections" id="connections">CONNECTIONS</a></h4>
 <ul>
 <li>Left White Line Sensor 	    : <strong>PC1 [ ADC Channel 1 ]</strong></li>
 <li>Center White Line Sensor    : <strong>PC0 [ ADC Channel 0 ]</strong></li>
@@ -179,7 +177,7 @@
 <li>5th IR Proximity Sensor        : <strong>PC5 [ ADC Channel 5 ]</strong></li>
 </ul>
 <hr />
-<h4 id="procedure"><a class="header" href="#procedure">PROCEDURE</a></h4>
+<h4><a class="header" href="#procedure" id="procedure">PROCEDURE</a></h4>
 <p><strong>Step-1:</strong>  Download  <b><a href="./resources/lab3_adc.zip" target="_blank">lab3_adc</a></b> zip file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download. Extract the zip file. Start Eclipse, click on <em>File --&gt; Open Projects From File System --&gt; Directory</em> and browse for <strong>lab3_adc</strong> folder to open the project.</p>
 <p><strong>Step-2:</strong> In <strong>src/eBot_Sandbox.cpp</strong>, complete the <strong>send_sensor_data</strong> function to achieve the following:</p>
 <p>Read data from 3 white line sensors and IR proximity sensor. Print IR proximity sesnor data on the terminal.</p>
@@ -231,7 +229,7 @@ pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; read
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_lab-3_output.png"></center>
 <p><strong>Step-7:</strong> Load the hex file on the <b><a href="./resources/AVR_simulator.simu" target="_blank">SimulIDE circuit (AVR_simulator.simu)</a></b> once your program gets build successfully. Save the project. Ensure that code performs as expected. <strong>NOTE:</strong> Getting <strong>Build succeeded</strong> output doesn't mean that your program will give the expected output as it can contain logical errrors.</p>
 <hr />
-<h4 id="macros-to-use"><a class="header" href="#macros-to-use">MACROS to use</a></h4>
+<h4><a class="header" href="#macros-to-use" id="macros-to-use">MACROS to use</a></h4>
 <ul>
 <li>In the skeleton code <strong>eBot_MCU_Predef.c</strong> we have included a header file named, <strong>eBot_MCU_Predef.h</strong> which consists of the declaration of the following constants (<em>for atmega328p controller</em>):</li>
 </ul>
@@ -256,10 +254,10 @@ pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; read
 <li>You have to use these constants declared in <strong>eBot_MCU_Predef.h</strong> and the Masking Operators to complete the lab.</li>
 </ul>
 <hr />
-<h4 id="expected-output---coppeliasim"><a class="header" href="#expected-output---coppeliasim">EXPECTED OUTPUT - CoppeliaSim</a></h4>
+<h4><a class="header" href="#expected-output---coppeliasim" id="expected-output---coppeliasim">EXPECTED OUTPUT - CoppeliaSim</a></h4>
 <p><strong>Software required:</strong> CoppeliaSim and Eclipse (refer Installation_Instructions provided to you) </p>
 <iframe width="710" height="315" src="https://www.youtube.com/embed/KibX8tNKv4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h4 id="expected-output---simulide"><a class="header" href="#expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
+<h4><a class="header" href="#expected-output---simulide" id="expected-output---simulide">EXPECTED OUTPUT - SimulIDE</a></h4>
 <p>​	<strong>Software required:</strong> SimulIDE AppImage (refer Installation_Instructions provided to you)</p>
 <iframe width="710" height="315" src="https://www.youtube.com/embed/MkdOMZZwaOM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

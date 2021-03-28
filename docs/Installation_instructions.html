@@ -17,16 +17,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
@@ -96,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="Installation_instructions.html" class="active">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="Welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="Installation_instructions.html" class="active">Installation Instructions</a></li><li class="chapter-item "><a href="Resources.html">Lab Resources</a></li><li class="chapter-item "><a href="CS684_Lab-1.html">Lab 1</a></li><li class="chapter-item "><a href="CS684_Lab-2.html">Lab 2</a></li><li class="chapter-item "><a href="CS684_Lab-3.html">Lab 3</a></li><li class="chapter-item "><a href="CS684_Lab-4.html">Lab 4</a></li><li class="chapter-item "><a href="CS684_Lab-6.html">Lab 6</a></li><li class="chapter-item "><a href="rulebook/toc.html">Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rulebook/theme_description.html">[1] Theme Description</a></li><li class="chapter-item "><a href="rulebook/arena.html">[2] Arena</a></li><li class="chapter-item "><a href="rulebook/sw_specifications.html">[3] HW/SW Specifications</a></li><li class="chapter-item "><a href="rulebook/theme_rules.html">[4] Theme Rules</a></li><li class="chapter-item "><a href="rulebook/judging_and_scoring_system.html">[5] Judging and Scoring System</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +127,9 @@
                     <h1 class="menu-title">CS684 Spring 2021</h1>
 
                     <div class="right-buttons">
-                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
                         
                     </div>
                 </div>
@@ -160,7 +158,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <center><h1 id="installation-guide"><a class="header" href="#installation-guide"> Installation Guide</a></h1></center>
+                        <center><h1><a class="header" href="#installation-guide" id="installation-guide"> Installation Guide</a></h1></center>
 <p>This document contains instructions to install following software/libraries on <strong>Ubuntu OS</strong>:</p>
 <ul>
 <li><strong>SimulIDE 0.4.14</strong></li>
@@ -176,7 +174,7 @@
 <p>After installation, follow the steps in <strong>AVR Building Tool</strong> which will be used to compile and generate hex file from microcontroller code.</p>
 <!-- toc -->
 <hr>
-<h3 id="div-alignjustify-classmainbsimulidebdiv"><a class="header" href="#div-alignjustify-classmainbsimulidebdiv"> <div align="justify" class="main"><b>SimulIDE:</b></div></a></h3>
+<h3><a class="header" href="#div-alignjustify-classmainbsimulidebdiv" id="div-alignjustify-classmainbsimulidebdiv"> <div align="justify" class="main"><b>SimulIDE:</b></div></a></h3>
 <hr>
 <p><b>Description:</b><div align="justify" class="main"> SimulIDE is a simple real time electronic circuit simulator, to learn and experiment with simple electronic circuits and microcontrollers, supporting PIC, AVR and Arduino. In this course, we will use it for simulating AVR projects.</div></p>
 <p><b>Installation Steps:</b></p>
@@ -198,7 +196,7 @@
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/SimulIDE_launch.png"/></center>
  <center>Figure: SimulIDE software launch</center>
 <hr>
-<h3 id="div-alignjustify-classmainbeclipsebdiv"><a class="header" href="#div-alignjustify-classmainbeclipsebdiv"><div align="justify" class="main"><b>Eclipse:</b></div></a></h3>
+<h3><a class="header" href="#div-alignjustify-classmainbeclipsebdiv" id="div-alignjustify-classmainbeclipsebdiv"><div align="justify" class="main"><b>Eclipse:</b></div></a></h3>
 <hr>
 <p><b>Description:</b> Eclipse is an integrated development environment used in computer programming. It contains a base workspace and an extensible plug-in system for customising the environment. We will be using Eclipse for writing our codes. </p>
 <p><b>Installation Steps:</b></p>
@@ -230,7 +228,7 @@
 <center><img src="https://raw.githubusercontent.com/rutujaekatpure/CS684_Labs/main/Images/Eclipse_IDE.png"></center>
 <center>Figure: Eclipse software launch</center>
 <hr>
-<h3 id="div-alignjustify-classmainbcoppeliasimbdiv"><a class="header" href="#div-alignjustify-classmainbcoppeliasimbdiv"><div align="justify" class="main"><b>CoppeliaSim:</b></div></a></h3>
+<h3><a class="header" href="#div-alignjustify-classmainbcoppeliasimbdiv" id="div-alignjustify-classmainbcoppeliasimbdiv"><div align="justify" class="main"><b>CoppeliaSim:</b></div></a></h3>
 <hr>
 <p><b>Description:</b><div align="justify" class="main">  The robot simulator CoppeliaSim is based on a distributed control architecture: each object/model can be individually controlled via an embedded script, a plugin, a ROS or BlueZero node, a remote API client, or a custom solution. This makes CoppeliaSim very versatile and ideal for multi-robot applications. Controllers can be written in C/C++, Python, Java, Lua, Matlab or Octave.</div></p>
 <p><b>Installation Steps:</b></p>
@@ -263,7 +261,7 @@
 </li>
 </ul>
 <hr>
-<h3 id="div-alignjustify-classmainbavr-building-toolbdiv"><a class="header" href="#div-alignjustify-classmainbavr-building-toolbdiv"><div align="justify" class="main"><b>AVR Building Tool:</b></div></a></h3>
+<h3><a class="header" href="#div-alignjustify-classmainbavr-building-toolbdiv" id="div-alignjustify-classmainbavr-building-toolbdiv"><div align="justify" class="main"><b>AVR Building Tool:</b></div></a></h3>
 <hr>
 <b>Description:</b><div align="justify" class="main">  This is user generated executable file. The file will be used to compile and build AVR codes and generate hex file. </div>
 Download  <b><a href="./resources/avr_hex_file_generator" target="_blank">avr_hex_file_generator</a></b> executable file. Right-click on the hyperlinks and select <b>Save Link As...</b> option to download.<br>
