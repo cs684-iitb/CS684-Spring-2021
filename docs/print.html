@@ -931,7 +931,7 @@ pos(X,Y) - (-0.6060, -0.2000), ori(Alpha, Beta, Gamma) - (0, 0, 90)  --&gt; read
 <li>
 <p>Once robot scans entire grid, it should stop at medical camp to mark an end of the run.</p>
 <!-- - Robot can decide to satisfy the requirement or ignore it.
- 
+
  - Robot can receive one or multiple requests at one time. 
  - There can be two types of requests as given below or can be empty.
    - Fetch RED Survivor in 10s
@@ -964,8 +964,8 @@ Robot has to travesrse to the nearest RED Survivor plot and ring the buzzer with
 </ul>
 <p>Output Operations</p>
 <ul>
-<li>Once a request is performed by the robot, the response should be sent by  the robot to the laptop over BLE and from laptop to the Thingsboard server. (The exact request formats will be added shortly)</li>
-<li>The protocol to use while sending the data back to Thingsboard server will be CoAP.</li>
+<li>Once a request is performed by the robot, the response should be sent by  the robot to the laptop over BLE and from laptop to the Thingsboard server. (The exact request and response formats are present under resource section (<code>MockingRPC</code>) <strong>[Updated April 6]</strong>).</li>
+<li>The data should be sent as <strong>telemetry</strong> and the protocol to use while sending the data back to Thingsboard server will be CoAP. <strong>[Updated April 6]</strong></li>
 <li>Teams should prepare an interface (desktop app or web app) to show the requests received, indicate operations being performed on the arena and result of the operations. This is an open ended task so use your creativity.</li>
 </ul>
 <br>
